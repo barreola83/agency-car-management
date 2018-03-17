@@ -52,22 +52,12 @@
                 <a href="#vehicles-request" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
                     <i class="icon-speedometer"></i> Solicitud de Vehículos
                 </a>
-                <div id="vehicles-request" class="sidebar-nav-group collapse">
-                    <a href="#" class="sidebar-nav-link">Avalar Solicitud</a>
-                    <a href="#" class="sidebar-nav-link">Aprobar Solicitud</a>
-                    <a href="#" class="sidebar-nav-link">Eliminar Solicitud</a>
-                </div>
             </div>
 
             <div class="sidebar-nav-group">
                 <a href="#reports" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
                     <i class="icon-wallet"></i> Reportes
                 </a>
-                <div id="reports" class="sidebar-nav-group collapse">
-                    <a href="#" class="sidebar-nav-link">Generar Reporte</a>
-                    <a href="#" class="sidebar-nav-link">Consultar Reporte</a>
-
-                </div>
             </div>
 
           </div>
@@ -147,21 +137,41 @@
               <div class="col col-md-12 col-lg-12">
                 <div class="form-group">
                   <label>
-                    Vehículos
+                    ID del reporte <small class="text-secondary">(obligatorio)</small>
                   </label>
                   <input class="form-control" type="text">
                 </div>
               </div>
-              <div class="col col-md-12 col-lg-12">
-                <div class="form-group">
-                  <label>Comentarios</label>
-                  <textarea class="form-control" rows="3"></textarea>
-                </div>
-              </div>
-              <div class="col col-md-9 col-lg-9"></div>
+           <div class="col col-md-9 col-lg-9"></div>
               <div class="col col-md-3 col-lg-3">
                 <div class="form-group">
                   <button class="btn btn-block btn-success">Generar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="container-fluid">
+          	 <hr style="width:100%;">
+          <div class="col col-md-12 col-lg-12">
+              
+              <div class="form-group">
+              	 <h3 style="text-align:center">Consultar Reporte de Resultados</h3>
+
+            <div class="row">
+              <div class="col col-md-12 col-lg-12">
+                <div class="form-group">
+                  <label>
+             <label>
+                 Seleccione la fecha del reporte a consultar <small class ="text-secondary">(obligatorio)</small>
+              </label>
+              <input type="date" name="fecha">
+              </div>
+            </div>
+              <div class="col col-md-9 col-lg-9"></div>
+              <div class="col col-md-3 col-lg-3">
+                <div class="form-group">
+                  <button class="btn btn-block btn-success">Consultar</button>
                 </div>
               </div>
             </div>
