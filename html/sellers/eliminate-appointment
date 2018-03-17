@@ -13,7 +13,7 @@
     <!-- Archivos locales CSS -->
     <link href="../../css/admin4b.min.css" rel="stylesheet">
     <link href="../../css/admin4b-highlight.min.css" rel="stylesheet">
-    <title>Admin 4B</title>
+    <title>Eliminar Cita</title>
   </head>
 
   <body>
@@ -148,13 +148,13 @@
 
           <!-- All application's content goes here -->
           <div class="container-fluid">
-            <h2 style="text-align:center">Registrar nueva cita</h2>
+            <h2 style="text-align:center">Eliminar cita</h2>
 
             <div class="row">
               <div class="col col-md-12 col-lg-12">
                 <div class="form-group">
                   <label>
-                    Asunto <small class="text-secondary">(requerido)</small>
+                    Introduzca el ID de la cita <small class="text-secondary">(requerido)</small>
                   </label>
                   <input class="form-control" type="text">
                 </div>
@@ -168,7 +168,7 @@
               <div class="col col-md-9 col-lg-9"></div>
               <div class="col col-md-3 col-lg-3">
                 <div class="form-group">
-                  <button class="btn btn-block btn-success">Guardar</button>
+                  <button class="btn btn-block btn-success">Eliminar</button>
                 </div>
               </div>
             </div>
