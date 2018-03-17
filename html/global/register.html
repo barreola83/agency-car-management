@@ -15,7 +15,6 @@
     <!-- Archivos locales CSS -->
     <link href="../../css/admin4b.min.css" rel="stylesheet">
     <link href="../../css/admin4b-highlight.min.css" rel="stylesheet">
-    <link href="global.css" rel="stylesheet">
     <title>Toyota Admin</title>
 </head>
 
@@ -34,7 +33,7 @@
                 <div class="sidebar-header">
                     <img src="../../img/user-photo.png" class="user-photo">
                     <p class="username">
-                        Carlos Herrera
+                        Bryan Arreola
                         <small>Gerente global</small>
                     </p>
                 </div>
@@ -46,41 +45,94 @@
                     </a>
 
                     <div class="sidebar-nav-group">
-                        <a href="#prospects-clients" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                            <i class="icon-people"></i> Clientes y prospectos
+                        <a href="#stock" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
+                            <i class="icon-people"></i> Stock
                         </a>
-                        <div id="prospects-clients" class="sidebar-nav-group collapse">
-                            <a href="#" class="sidebar-nav-link">Registrar</a>
-                            <a href="#" class="sidebar-nav-link">Consultar</a>
+                        <div id="stock" class="sidebar-nav-group collapse">
+                            <a data-toggle="modal" href="#agencyModal" class="sidebar-nav-link">Actualizar por agencia</a>
+                            <a data-toggle="modal" href="#globalModal" class="sidebar-nav-link">Actualizar globalmente</a>
+                        </div>
+                        <div id="agencyModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Actualizar stock en agencia</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>
+                                                ID
+                                            </label>
+                                            <input type="number" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                ID automóvil
+                                            </label>
+                                            <input type="number" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                Cantidad disponible
+                                            </label>
+                                            <input type="number" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" data-dismiss="modal">Actualizar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="globalModal" class="modal fade">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Actualizar stock global</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label>
+                                                ID
+                                            </label>
+                                            <input type="number" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                ID automóvil
+                                            </label>
+                                            <input type="number" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>
+                                                Cantidad disponible
+                                            </label>
+                                            <input type="number" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-success" data-dismiss="modal">Actualizar</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="sidebar-nav-group">
-                        <a href="#vehicles" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                            <i class="icon-speedometer"></i> Vehículos
+                        <a href="#reports" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
+                            <i class="icon-speedometer"></i> Reportes
                         </a>
-                        <div id="vehicles" class="sidebar-nav-group collapse">
-                            <a href="#" class="sidebar-nav-link">Catálogo</a>
-                            <a href="#" class="sidebar-nav-link">Búsqueda avanzada</a>
-                        </div>
-                    </div>
-
-                    <div class="sidebar-nav-group">
-                        <a href="#sales" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                            <i class="icon-wallet"></i> Ventas
-                        </a>
-                        <div id="sales" class="sidebar-nav-group collapse">
-                            <a href="#" class="sidebar-nav-link">Registrar</a>
-                        </div>
-                    </div>
-
-                    <div class="sidebar-nav-group">
-                        <a href="#agenda" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                            <i class="icon-calendar"></i> Agenda
-                        </a>
-                        <div id="agenda" class="sidebar-nav-group collapse">
-                            <a href="#" class="sidebar-nav-link">Registrar cita</a>
-                            <a href="#" class="sidebar-nav-link">Consultar cita</a>
+                        <div id="reports" class="sidebar-nav-group collapse">
+                            <a href="reports.html" class="sidebar-nav-link">Generar</a>
+                            <a href="consult.html" class="sidebar-nav-link">Consultar</a>
                         </div>
                     </div>
 
@@ -89,7 +141,7 @@
                             <i class="icon-plus"></i> Agencias
                         </a>
                         <div id="agency" class="sidebar-nav-group collapse">
-                            <a href="#" class="sidebar-nav-link">Registrar agencia</a>
+                            <a href="register.html" class="sidebar-nav-link">Registrar agencia</a>
                         </div>
                     </div>
 
@@ -161,19 +213,25 @@
 
                 <!-- All applications content goes here -->
                 <div class="container-fluid">
+
                     <div class="row">
-                        <div class="col col-md-4 col-lg-4">
+                        <div class="col col-md-6 col-lg-6">
                             <div class="form-group">
                                 <label>Nombre</label>
                                 <input type="text" class="form-control">
                             </div>
                         </div>
-                        <div class="col col-md-4 col-lg-4">
+                    </div>
+
+                    <div class="row">
+                        <div class="col col-md-5 col-lg-5">
                             <div class="form-group">
                                 <label>Calle</label>
                                 <input type="text" class="form-control">
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="col col-md-1 col-lg-1">
                             <div class="form-group">
                                 <label>Exterior</label>
@@ -184,16 +242,7 @@
                             <div class="form-group">
                                 <label>Interior
                                 </label>
-                                <input type="number" class="form-control" placeholder="(opcional)">
-                            </div>
-                        </div>
-
-                        <div class="col col-md-4 col-lg-4">
-                            <div class="form-group">
-                                <label>
-                                    Colonia
-                                </label>
-                                <input type="text" class="form-control">
+                                <input type="number" class="form-control" placeholder="opcional">
                             </div>
                         </div>
                         <div class="col col-md-1 col-lg-1">
@@ -202,8 +251,19 @@
                                 <input type="number" class="form-control">
                             </div>
                         </div>
-
                     </div>
+
+                    <div class="row">
+                        <div class="col col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label>
+                                    Colonia
+                                </label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="row">
                         <div class="col col-md-2 col-lg-2">
                             <div class="form-group">
@@ -224,6 +284,18 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col col-md-6 col-lg-6">
+                            <div class="form-group">
+                                <label>
+                                    Sitio web
+                                </label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-group">
                         <button class="btn btn-success">
                             Registrar
