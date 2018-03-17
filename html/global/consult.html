@@ -12,9 +12,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
 
+
     <!-- Archivos locales CSS -->
     <link href="../../css/admin4b.min.css" rel="stylesheet">
     <link href="../../css/admin4b-highlight.min.css" rel="stylesheet">
+    <link href="global.css" rel="stylesheet">
     <title>Toyota Admin</title>
 </head>
 
@@ -132,7 +134,7 @@
                         </a>
                         <div id="reports" class="sidebar-nav-group collapse">
                             <a href="reports.html" class="sidebar-nav-link">Generar</a>
-                            <a href="consult.html" class="sidebar-nav-link">Consultar</a>
+                            <a href="" class="sidebar-nav-link">Consultar</a>
                         </div>
                     </div>
 
@@ -207,102 +209,14 @@
 
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item active" aria-current="page">Registrar nueva agencia</li>
+                        <li class="breadcrumb-item active" aria-current="page">Consultar reporte</li>
                     </ol>
                 </nav>
 
                 <!-- All applications content goes here -->
-                <div class="container-fluid">
 
-                    <div class="row">
-                        <div class="col col-md-6 col-lg-6">
-                            <div class="form-group">
-                                <label>Nombre</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
+                <canvas id="myChart"></canvas>
 
-                    <div class="row">
-                        <div class="col col-md-5 col-lg-5">
-                            <div class="form-group">
-                                <label>Calle</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-md-1 col-lg-1">
-                            <div class="form-group">
-                                <label>Exterior</label>
-                                <input type="number" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col col-md-1 col-lg-1">
-                            <div class="form-group">
-                                <label>Interior
-                                </label>
-                                <input type="number" class="form-control" placeholder="opcional">
-                            </div>
-                        </div>
-                        <div class="col col-md-1 col-lg-1">
-                            <div class="form-group">
-                                <label>Código postal</label>
-                                <input type="number" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col col-md-6 col-lg-6">
-                            <div class="form-group">
-                                <label>
-                                    Colonia
-                                </label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col col-md-2 col-lg-2">
-                            <div class="form-group">
-                                <label for="sel1">Tipo:</label>
-                                <select class="form-control" id="sel1">
-                                    <option>Headquarters</option>
-                                    <option>Agency</option>
-                                    <option>Branch office</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col col-md-2 col-lg-2">
-                            <div class="form-group">
-                                <label>
-                                    Teléfono
-                                </label>
-                                <input type="number" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col col-md-6 col-lg-6">
-                            <div class="form-group">
-                                <label>
-                                    Sitio web
-                                </label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <button class="btn btn-success">
-                            Registrar
-                        </button>
-                    </div>
-
-                </div>
                 <!-- End of application content -->
 
             </div>
@@ -317,10 +231,48 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
     <!-- Archivos de JavaScript locales -->
+    <script src="../../js/global.js"></script>
     <script src="../../js/admin4b.min.js"></script>
-    <script src="../../js/admin4b.docs.js"></script>
+
+    <script>
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ["Ene", "Feb", "Mar", "Abr"],
+                datasets: [{
+                    label: 'Autos vendidos por mes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+
 </body>
 
 </html>
