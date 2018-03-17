@@ -13,7 +13,7 @@
     <!-- Archivos locales CSS -->
     <link href="../../css/admin4b.min.css" rel="stylesheet">
     <link href="../../css/admin4b-highlight.min.css" rel="stylesheet">
-    <title>Toyota Admin</title>
+    <title>Gerente de Agencia</title>
   </head>
 
   <body>
@@ -31,8 +31,8 @@
           <div class="sidebar-header">
             <img src="../../img/user-photo.png" class="user-photo">
             <p class="username">
-              Carlos Herrera
-              <small>Vendedor</small>
+              Dámaso
+              <small>Gerente de Agencias</small>
             </p>
           </div>
 
@@ -43,48 +43,42 @@
             </a>
 
             <div class="sidebar-nav-group">
-                <a href="#prospects-clients" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                    <i class="icon-people"></i> Clientes y prospectos
+                <a href="#vehicles-stock" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
+                    <i class="icon-people"></i> Stock de vehículos
                 </a>
-                <div id="prospects-clients" class="sidebar-nav-group collapse">
-                    <a href="prospect.new.html" class="sidebar-nav-link">Registrar</a>
-                    <a href="prospect-search.html" class="sidebar-nav-link">Consultar</a>
+            </div>
+
+            <div class="sidebar-nav-group">
+                <a href="#vehicles-request" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
+                    <i class="icon-speedometer"></i> Solicitud de Vehículos
+                </a>
+                <div id="vehicles-request" class="sidebar-nav-group collapse">
+                    <a href="#" class="sidebar-nav-link">Avalar Solicitud</a>
+                    <a href="#" class="sidebar-nav-link">Aprobar Solicitud</a>
+                    <a href="#" class="sidebar-nav-link">Eliminar Solicitud</a>
                 </div>
             </div>
 
             <div class="sidebar-nav-group">
-                <a href="#vehicles" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                    <i class="icon-speedometer"></i> Vehículos
+                <a href="#reports" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
+                    <i class="icon-wallet"></i> Reportes
                 </a>
-                <div id="vehicles" class="sidebar-nav-group collapse">
-                    <a href="vehicles.html" class="sidebar-nav-link">Catálogo</a>
-                    <a href="vehicle-search.html" class="sidebar-nav-link">Búsqueda avanzada</a>
-                </div>
-            </div>
-
-            <div class="sidebar-nav-group">
-                <a href="#sales" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                    <i class="icon-wallet"></i> Ventas
-                </a>
-                <div id="sales" class="sidebar-nav-group collapse">
-                    <a href="vehicle-new.html" class="sidebar-nav-link">Registrar</a>
-                </div>
-            </div>
-
-            <div class="sidebar-nav-group">
-                <a href="#agenda" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                    <i class="icon-calendar"></i> Agenda
-                </a>
-                <div id="agenda" class="sidebar-nav-group collapse">
-                    <a href="#" class="sidebar-nav-link">Registrar cita</a>
-                    <a href="#" class="sidebar-nav-link">Consultar cita</a>
+                <div id="reports" class="sidebar-nav-group collapse">
+                    <a href="#" class="sidebar-nav-link">Generar Reporte</a>
+                    <a href="#" class="sidebar-nav-link">Consultar Reporte</a>
                 </div>
             </div>
 
           </div>
           
           <div class="sidebar-footer">
-            <a href="../general/signin.html" data-toggle="tooltip" title="Logout">
+            <a href="https://github.com/marxjmoura/admin4b" data-toggle="tooltip" title="GitHub">
+              <i class="fa fa-github"></i>
+            </a>
+            <a href="./pages/sample-pages/settings.html" data-toggle="tooltip" title="Settings">
+              <i class="fa fa-cog"></i>
+            </a>
+            <a href="./pages/sample-pages/signin.html" data-toggle="tooltip" title="Logout">
               <i class="fa fa-power-off"></i>
             </a>
           </div>
@@ -140,16 +134,43 @@
 
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item active" aria-current="page">¡Bienvenido, Carlos Herrera!</li>
+              <li class="breadcrumb-item active" aria-current="page">¡Bienvenido Dámaso!</li>
             </ol>
           </nav>
 
           <!-- All applications content goes here -->
           <div class="container-fluid">
+            <h2 style="text-align:center">Aprobar de Solicitud de Vehículos</h2>
 
-            
-
+            <div class="row">
+              <div class="col col-md-12 col-lg-12">
+                <div class="form-group">
+                  <label>
+                    Vehículos
+                  </label>
+                  <input class="form-control" type="text">
+                </div>
+              </div>
+              <div class="col col-md-12 col-lg-12">
+                <div class="form-group">
+                  <label>Comentarios</label>
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="col col-md-9 col-lg-9"></div>
+              <div class="col col-md-3 col-lg-3">
+                <div class="form-group">
+                  <button class="btn btn-block btn-success">Aprobar</button>
+                </div>
+              </div>
+            </div>
           </div>
+          <!-- End of application content -->
+          
+        </div>
+      </div>
+    </div>
+
           <!-- End of application content -->
           
         </div>

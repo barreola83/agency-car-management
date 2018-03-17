@@ -1,0 +1,14 @@
+/* Actividades para vendedores */
+(0x0010, "Registrar nuevo prospecto"),              *
+(0x0011, "Registrar nuevo cliente"),                *
+(0x0012, "Actualizar perfil de prospecto"),                  
+(0x0013, "Actualizar perfil de cliente"),
+(0x0014, "Consultar vehículo"),                     *
+(0x0015, "Consultar vehículo en agencia externa"),
+(0x0016, "Apartar vehículo"),
+(0x0017, "Cancelar apartado de vehículo"),
+(0x0018, "Registrar venta de vehículo"),              *
+(0x0019, "Registrar solicitud de vehículo a agencia externa"),      
+
+/* Actividad para vendedores y gerentes de agencia*/
+(0x001A, "Cancelar solicitud de vehículo a agencia externa"),
