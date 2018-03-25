@@ -1,0 +1,12 @@
+.text-weight {
+    font-weight: 700;
+}
+
+.fa-pencil:hover {
+    cursor:pointer;
+    color: #62d1c8;
+}
+
+tr:hover{
+    background-color: #ffe6e6;
+}
