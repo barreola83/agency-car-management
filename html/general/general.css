@@ -20,3 +20,11 @@
     padding: .95rem;
     margin: 0 auto;
 }
+
+body{
+    background-image: url(../../img/sign.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
