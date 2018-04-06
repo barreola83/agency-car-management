@@ -8,5 +8,9 @@
 }
 
 tr:hover{
-    background-color: #ffe6e6;
+    background-color: #d3d3d3d3;
+}
+
+.active-row{
+    background-color: #d3d3d3d3;
 }
