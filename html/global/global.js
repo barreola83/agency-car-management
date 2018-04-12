@@ -7,7 +7,9 @@ $(document).ready(function () {
             $(this).addClass('active-row').siblings().removeClass('active-row');
         }
     });
-    
-    
 
+
+    $('#sumbitReg').on('click', function(event){
+        
+    })
 });

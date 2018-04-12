@@ -146,7 +146,7 @@
                         <div class="col col-md-6 col-lg-6">
                             <div class="form-group">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="name">
                             </div>
                         </div>
                     </div>
@@ -155,7 +155,7 @@
                         <div class="col col-md-5 col-lg-5">
                             <div class="form-group">
                                 <label>Calle</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="street">
                             </div>
                         </div>
                     </div>
@@ -163,31 +163,52 @@
                         <div class="col col-md-1 col-lg-1">
                             <div class="form-group">
                                 <label>Exterior</label>
-                                <input type="number" class="form-control">
+                                <input type="number" class="form-control" id="extNumber">
                             </div>
                         </div>
                         <div class="col col-md-1 col-lg-1">
                             <div class="form-group">
                                 <label>Interior
                                 </label>
-                                <input type="number" class="form-control" placeholder="opcional">
+                                <input type="number" class="form-control" placeholder="opcional" id="intNumber">
                             </div>
                         </div>
                         <div class="col col-md-1 col-lg-1">
                             <div class="form-group">
                                 <label>Código postal</label>
-                                <input type="number" class="form-control">
+                                <input type="number" class="form-control" id="zip_code">
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col col-md-6 col-lg-6">
+                        <div class="col col-md-4 col-lg-4">
                             <div class="form-group">
                                 <label>
                                     Colonia
                                 </label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="neighborhood">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col col-md-2 col-lg-2">
+                            <div class="form-group">
+                                <label>
+                                    Estado:
+                                </label>
+                                <select class="form-control" id="selState">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col col-md-2 col-lg-2">
+                            <div class="form-group">
+                                <label>
+                                    Ciudad:
+                                </label>
+                                <select class="form-control" id="selTown">
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -196,7 +217,7 @@
                         <div class="col col-md-2 col-lg-2">
                             <div class="form-group">
                                 <label for="sel1">Tipo:</label>
-                                <select class="form-control" id="sel1">
+                                <select class="form-control" id="selType">
                                     <option>Headquarters</option>
                                     <option>Agency</option>
                                     <option>Branch office</option>
@@ -208,7 +229,7 @@
                                 <label>
                                     Teléfono
                                 </label>
-                                <input type="number" class="form-control">
+                                <input type="number" class="form-control" id="phoneNumber">
                             </div>
                         </div>
                     </div>
@@ -219,13 +240,13 @@
                                 <label>
                                     Sitio web
                                 </label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" id="website">
                             </div>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <button class="btn btn-success">
+                        <button class="btn btn-success" id="submitReg">
                             Registrar
                         </button>
                     </div>
@@ -249,6 +270,7 @@
     <!-- Archivos de JavaScript locales -->
     <script src="../../js/admin4b.min.js"></script>
     <script src="../../js/admin4b.docs.js"></script>
+    <script src="/global.js"></script>
 </body>
 
 </html>
