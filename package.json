@@ -1,0 +1,19 @@
+{
+  "name": "agency-car-management",
+  "version": "1.0.0",
+  "description": "Management system of the Toyota Agency for the administrative approach developed by students of the Faculty of Telematics.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barreola83/agency-car-management.git"
+  },
+  "author": "Bryan Arreola, Christian Cagide, Dámaso Benicio, Daniel Herrera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barreola83/agency-car-management/issues"
+  },
+  "homepage": "https://github.com/barreola83/agency-car-management#readme"
+}
