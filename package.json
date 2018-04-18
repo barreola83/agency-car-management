@@ -4,7 +4,8 @@
   "description": "Management system of the Toyota Agency for the administrative approach developed by students of the Faculty of Telematics.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/barreola83/agency-car-management/issues"
   },
-  "homepage": "https://github.com/barreola83/agency-car-management#readme"
+  "homepage": "https://github.com/barreola83/agency-car-management#readme",
+  "dependencies": {
+    "mysql": "^2.15.0"
+  }
 }
