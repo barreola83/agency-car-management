@@ -1,9 +1,7 @@
-let http = require("http");
+let http = require('http');
 
-let hostname = '127.0.0.1';
-let port = 8080;
-
-http.createServer((req, res) => {
-    res.writeHead(200, { 'Content-type': 'text/html' });
+http.createServer(function (req, res) {
+    let pathname = url.parse(req.url).pathname;
+    res.writeHead(200, {'Content-Type': 'text/html'});
     res.end();
-}).listen(port);
+}).listen(8080);
