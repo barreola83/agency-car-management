@@ -13,6 +13,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
 
 
+
     <!-- Archivos locales CSS -->
     <link href="../../css/admin4b.min.css" rel="stylesheet">
     <link href="../../css/admin4b-highlight.min.css" rel="stylesheet">
@@ -154,9 +155,7 @@
                                     <th scope="col">Automóvil</th>
                                     <th scope="col">ID Automóvil</th>
                                     <th scope="col">Stock status</th>
-                                    <th scope="col">Cantidad
-                                        <i class="fa fa-pencil"></i>
-                                    </th>
+                                    <th scope="col">Cantidad</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -164,28 +163,73 @@
                                     <th scope="row">1</th>
                                     <td>OZ Toyota</td>
                                     <td>65498</td>
-                                    <td>Camry 2018</td>
+                                    <td>Camry 2018 LE Rojo</td>
                                     <td>84654</td>
                                     <td style="color:green">In stock</td>
-                                    <td>27</td>
+                                    <td id="stockLeft">21</td>
+                                </tr>
+                                <tr class="clickable-row">
+                                    <th scope="row">1</th>
+                                    <td>OZ Toyota</td>
+                                    <td>65498</td>
+                                    <td>Camry 2018 XLE Negro</td>
+                                    <td>84654</td>
+                                    <td style="color:green">In stock</td>
+                                    <td id="stockLeft">2</td>
+                                </tr>
+                                <tr class="clickable-row">
+                                    <th scope="row">1</th>
+                                    <td>OZ Toyota</td>
+                                    <td>65498</td>
+                                    <td>Camry 2018 SE Blanco</td>
+                                    <td>84654</td>
+                                    <td style="color:green">In stock</td>
+                                    <td id="stockLeft">7</td>
                                 </tr>
                                 <tr class="clickable-row">
                                     <th scope="row">2</th>
                                     <td>Dalton Toyota</td>
                                     <td>65498</td>
-                                    <td>Rav4 2018</td>
+                                    <td>Rav4 2018 LE Plata</td>
                                     <td>33258</td>
                                     <td style="color:red">Out of stock</td>
-                                    <td>0</td>
+                                    <td id="stockLeft">0</td>
+                                </tr>
+                                <tr class="clickable-row">
+                                    <th scope="row">2</th>
+                                    <td>Dalton Toyota</td>
+                                    <td>65498</td>
+                                    <td>Rav4 2018 XLE PLUS AWD Negro</td>
+                                    <td>33258</td>
+                                    <td style="color:red">Out of stock</td>
+                                    <td id="stockLeft">0</td>
+                                </tr>
+                                <tr class="clickable-row">
+                                    <th scope="row">2</th>
+                                    <td>Dalton Toyota</td>
+                                    <td>65498</td>
+                                    <td>Rav4 2018 SE AWD Blanco perla</td>
+                                    <td>33258</td>
+                                    <td style="color:red">Out of stock</td>
+                                    <td id="stockLeft">0</td>
                                 </tr>
                                 <tr class="clickable-row">
                                     <th scope="row">3</th>
                                     <td>Toyota Polanco</td>
                                     <td>65498</td>
-                                    <td>Sienna 2018</td>
+                                    <td>Sienna 2018 CE</td>
                                     <td>59484</td>
                                     <td style="color:green">In stock</td>
-                                    <td>5</td>
+                                    <td id="stockLeft">5</td>
+                                </tr>
+                                <tr class="clickable-row">
+                                    <th scope="row">3</th>
+                                    <td>Toyota Polanco</td>
+                                    <td>65498</td>
+                                    <td>Sienna 2018 XLE</td>
+                                    <td>59484</td>
+                                    <td style="color:green">In stock</td>
+                                    <td id="stockLeft">8</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -199,6 +243,7 @@
         </div>
     </div>
 
+
     <!-- TODO: Descargarlo en la carpeta componentes y enlazarlos -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -210,7 +255,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
     <!-- Archivos de JavaScript locales -->
-    <script src="global.js"></script>
+    <script src="../global/global.js"></script>
     <script src="../../js/admin4b.min.js"></script>
 
 </body>
