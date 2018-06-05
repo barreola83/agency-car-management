@@ -20,6 +20,11 @@ $(document).ready(function () {
         });*/
     });
 
+    $("#stockTable").on("dblclick", "tr", function(){
+        console.log($(this).find("th:first").text());
+        $("#editStockModal").modal("show");
+    });
+
     
 
 });
