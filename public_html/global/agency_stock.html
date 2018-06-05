@@ -101,7 +101,7 @@
                         </a>
                     </div>
 
-                    
+
                 </nav>
                 <!-- End of header -->
 
@@ -204,6 +204,59 @@
                         </table>
                     </div>
                 </div>
+
+                <!-- Modal content goes here -->
+                <div class="modal fade" id="editStockModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header text-center">
+                                <h5 style="margin: 0 auto;" class="modal-title">Actualizar stock</h5>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col ">
+                                        <div class="form-group">
+                                            <label>ID Agencia</label>
+                                            <input type="text" class="form-control" id="id_agency" readonly="readonly">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col ">
+                                        <div class="form-group">
+                                            <label>Automóvil</label>
+                                            <input type="text" class="form-control" id="automobileName" readonly="readonly">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col ">
+                                        <div class="form-group">
+                                            <label>ID Automóvil</label>
+                                            <input type="number" class="form-control" id="id_automobile" readonly="readonly">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col ">
+                                        <div class="form-group">
+                                            <label>
+                                                Cantidad
+                                            </label>
+                                            <input type="text" class="form-control" id="stockQty">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="cancelButton" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button id="acceptButton" type="button" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of modal content -->
 
 
                 <!-- End of application content -->
