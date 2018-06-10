@@ -1,5 +1,15 @@
 $(document).ready(function () {
 
+    let username = localStorage.getItem("username");
+    let role = localStorage.getItem("role");
+
+    console.log(username);
+    console.log(role);
+    $(".username").text(username);
+    $("p.username > small").text(role);
+    $(".breadcrumb-item").text("¡Bienvenido, " + username + "!");
+
+
     $('#stockTable, #agencyListTable').on('click', '.clickable-row', function (event) {
         if ($(this).hasClass('active-row')) {
             $(this).removeClass('active-row');
@@ -20,11 +30,10 @@ $(document).ready(function () {
         });*/
     });
 
-    $("#stockTable").on("dblclick", "tr", function(){
+    $("#stockTable").on("dblclick", "tr", function () {
         console.log($(this).find("th:first").text());
         $("#editStockModal").modal("show");
     });
 
-    
 
 });
