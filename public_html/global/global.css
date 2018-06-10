@@ -14,3 +14,7 @@ tr:hover{
 .active-row{
     background-color: #d3d3d3d3;
 }
+
+a {
+    cursor: pointer;
+}
