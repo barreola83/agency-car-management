@@ -13,6 +13,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
 
     <!-- Archivos locales CSS -->
+    <link href="global.css" rel="stylesheet">
     <link href="../../css/admin4b.min.css" rel="stylesheet">
     <link href="../../css/admin4b-highlight.min.css" rel="stylesheet">
     <title>Toyota Admin</title>
@@ -74,7 +75,7 @@
                 </div>
 
                 <div class="sidebar-footer">
-                    <a href="../general/signin.html" data-toggle="tooltip" title="Logout">
+                    <a data-toggle="tooltip" title="Logout" id="logout">
                         <i class="fa fa-power-off"></i>
                     </a>
                 </div>
@@ -103,7 +104,7 @@
 
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item active" aria-current="page">¡Bienvenido, Bryan Arreola!</li>
+                        <li class="breadcrumb-item active" aria-current="page" id="welcomeMessage"></li>
                     </ol>
                 </nav>
 

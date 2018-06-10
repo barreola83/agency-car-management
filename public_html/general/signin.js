@@ -59,5 +59,6 @@ $(document).ready(function () {
     function showError() {
         $("#login").html("Acceder");
         $("#signInError").modal('show');
+        $("#username").focus();
     }
 });
