@@ -45,39 +45,39 @@
           </a>
 
           <div class="sidebar-nav-group">
-            <a href="#prospects-clients" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-              <i class="icon-people"></i> Clientes y prospectos
-            </a>
-            <div id="prospects-clients" class="sidebar-nav-group collapse">
-              <a href="prospect-new.html" class="sidebar-nav-link">Registrar</a>
-              <a href="prospect-search.html" class="sidebar-nav-link">Consultar</a>
-            </div>
+              <a href="#prospects-clients" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
+                  <i class="icon-people"></i> Clientes y prospectos
+              </a>
+              <div id="prospects-clients" class="sidebar-nav-group collapse">
+                  <a href="prospect-new.html" class="sidebar-nav-link">Registrar</a>
+                  <a href="prospect-search.html" class="sidebar-nav-link">Consultar</a>
+              </div>
           </div>
 
           <div class="sidebar-nav-group">
-            <a href="#vehicles" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-              <i class="icon-speedometer"></i> Vehículos
-            </a>
-            <div id="vehicles" class="sidebar-nav-group collapse">
-              <a href="vehicles.html" class="sidebar-nav-link">Catálogo</a>
-              <a href="vehicle-search.html" class="sidebar-nav-link">Búsqueda avanzada</a>
-            </div>
+              <a href="#vehicles" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
+                  <i class="icon-speedometer"></i> Vehículos
+              </a>
+              <div id="vehicles" class="sidebar-nav-group collapse">
+                  <a href="vehicles.html" class="sidebar-nav-link">Catálogo</a>
+                  <a href="vehicle-search.html" class="sidebar-nav-link">Búsqueda avanzada</a>
+              </div>
           </div>
 
           <div class="sidebar-nav-group">
-            <a href="#agenda" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-              <i class="icon-calendar"></i> Agenda
-            </a>
-            <div id="agenda" class="sidebar-nav-group collapse">
-              <a href="appointment-new.html" class="sidebar-nav-link">Registrar cita</a>
-              <a href="update-appointment.html" class="sidebar-nav-link">Consultar cita</a>
-            </div>
+              <a href="#agenda" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
+                  <i class="icon-calendar"></i> Agenda
+              </a>
+              <div id="agenda" class="sidebar-nav-group collapse">
+                  <a href="appointment-new.html" class="sidebar-nav-link">Registrar cita</a>
+                  <a href="appointment-update.html" class="sidebar-nav-link">Consultar cita</a>
+              </div>
           </div>
 
         </div>
-
+        
         <div class="sidebar-footer">
-          <a href="./pages/sample-pages/signin.html" data-toggle="tooltip" title="Logout">
+          <a href="../general/signin.html" data-toggle="tooltip" title="Logout">
             <i class="fa fa-power-off"></i>
           </a>
         </div>
@@ -101,88 +101,91 @@
           </div>
         </nav>
         <!-- End of header -->
-
+        
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">¡Bienvenido Carlos Herrera!</li>
+            <li class="breadcrumb-item active" aria-current="page">Registrar nuevo prospecto/cliente</li>
           </ol>
         </nav>
-
+        
         <!-- All application's content goes here -->
-        <div class="container-fluid">
-          <h2 style="text-align:center">Registrar Nuevo Prospecto</h2>
+        <div id="container" class="container-fluid">
 
           <div class="row">
-            <div class="col col-md-12 col-lg-12">
+            <div class="col">
               <div class="form-group">
-                <label>
-                  Nombre
-                  <small class="text-secondary">(requerido)</small>
-                </label>
-                <input class="form-control" type="text">
+                <label>Tipo:</label>
+                <select class="form-control" name="type">
+                  <option value="PROSPECT" selected>Prospecto</option>
+                  <option value="CLIENT">Cliente</option>
+                </select>
               </div>
             </div>
-            <div class="col col-md-12 col-lg-12">
+
+            <div class="col">
               <div class="form-group">
-                <label>
-                  Apellido Paterno
-                  <small class="text-secondary">(requerido)</small>
-                </label>
-                <input class="form-control" type="text">
-              </div>
-            </div>
-            <div class="col col-md-12 col-lg-12">
-              <div class="form-group">
-                <label>
-                  Apellido Materno
-                  <small class="text-secondary">(requerido)</small>
-                </label>
-                <input class="form-control" type="text">
-              </div>
-            </div>
-            <div class="col col-md-12 col-lg-12">
-              <div class="form-group">
-                <label>
-                  RFC
-                  <small class="text-secondary">(requerido)</small>
-                </label>
-                <input class="form-control" type="text">
-              </div>
-            </div>
-            <div class="col col-md-12 col-lg-12">
-              <div class="form-group">
-                <label>
-                  Direccion
-                  <small class="text-secondary">(requerido)</small>
-                </label>
-                <input class="form-control" type="text">
-              </div>
-            </div>
-            <div class="col col-md-12 col-lg-12">
-              <div class="form-group">
-                <label>
-                  Correo
-                  <small class="text-secondary">(requerido)</small>
-                </label>
-                <input class="form-control" type="text">
-              </div>
-            </div>
-            <div class="col col-md-12 col-lg-12">
-              <div class="form-group">
-                <label>
-                  Telefono
-                  <small class="text-secondary">(requerido)</small>
-                </label>
-                <input class="form-control" type="text">
-              </div>
-            </div>
-            <div class="col col-md-9 col-lg-9"></div>
-            <div class="col col-md-3 col-lg-3">
-              <div class="form-group">
-                <button class="btn btn-block btn-success">Guardar</button>
+                <label>*RFC:</label>
+                <input type="text" class="form-control" name="rfc">
               </div>
             </div>
           </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>*Nombre:</label>
+                <input type="text" class="form-control" name="name">
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <label>*Apellido paterno:</label>
+                <input type="text" class="form-control" name="first_last_name">
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <label>Apellido materno:</label>
+                <input type="text" class="form-control" name="second_last_name">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>*Domicilio:</label>
+                <input type="text" class="form-control" name="home_address">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>*Correo electrónico:</label>
+                <input type="text" class="form-control" name="email">
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <label>*Teléfono:</label>
+                <input type="tel" class="form-control" name="phone">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <button type="button" class="btn btn-success" id="submit">Registrar</button>
+              </div>
+            </div>
+          </div>
+
         </div>
         <!-- End of application content -->
 
@@ -202,6 +205,23 @@
   <!-- Archivos de JavaScript locales -->
   <script src="../../js/admin4b.min.js"></script>
   <script src="../../js/admin4b.docs.js"></script>
+
+  <!-- Delete this -->
+  <script type="text/javascript">
+    /*
+      <div class='alert alert-success alert-dismissible fade show' role='alert'>
+        <strong>Éxito:</strong> El registro se llevó a cabo de forma exitosa.
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+          <span aria-hidden='true'>&times;</span>
+        </button>
+      </div>
+    */
+    $(document).ready(function() {
+      $("#submit").click(function() {
+        $("#container").prepend("<div class='alert alert-success alert-dismissible fade show' role='alert'><strong>Éxito:</strong> El registro se llevó a cabo de forma exitosa.<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
+      });
+    });
+  </script>
 </body>
 
 </html>
