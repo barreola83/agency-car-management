@@ -1,129 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- TODO: Descargarlo en la carpeta de componentes -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Archivos locales CSS -->
-    <link href="../../css/admin4b.min.css" rel="stylesheet">
-    <link href="../../css/admin4b-highlight.min.css" rel="stylesheet">
-    <title>Toyota Admin</title>
-  </head>
+  <!-- TODO: Descargarlo en la carpeta de componentes -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
 
-  <body>
-    <div class="app">
-      <div class="app-body">
-        <div class="app-sidebar sidebar-dark sidebar-slide-left">
+  <!-- Archivos locales CSS -->
+  <link href="../../css/admin4b.min.css" rel="stylesheet">
+  <link href="../../css/admin4b-highlight.min.css" rel="stylesheet">
+  <title>Toyota Admin</title>
+</head>
 
-          <!-- Start of navigation bar -->
-          <div class="text-right">
-            <button type="button" class="btn btn-sidebar" data-dismiss="sidebar">
-              <span class="x"></span>
-            </button>
-          </div>
+<body>
+  <div class="app">
+    <div class="app-body">
+      <div class="app-sidebar sidebar-dark sidebar-slide-left">
 
-          <div class="sidebar-header">
-            <img src="../../img/user-photo.png" class="user-photo">
-            <p class="username">
-              Carlos Herrera
-              <small>Vendedor</small>
-            </p>
-          </div>
+        <!-- Start of navigation bar -->
+        <div class="text-right">
+          <button type="button" class="btn btn-sidebar" data-dismiss="sidebar">
+            <span class="x"></span>
+          </button>
+        </div>
 
-          <div id="sidebar-nav" class="sidebar-nav" data-children=".sidebar-nav-group">
+        <div class="sidebar-header">
+          <img src="../../img/user-photo.png" class="user-photo">
+          <p class="username">
+            Carlos Herrera
+            <small>Vendedor</small>
+          </p>
+        </div>
 
-            <a href="index.html" class="sidebar-nav-link">
-              <i class="icon-home"></i> Inicio
+        <div id="sidebar-nav" class="sidebar-nav" data-children=".sidebar-nav-group">
+
+          <a href="index.html" class="sidebar-nav-link">
+            <i class="icon-home"></i> Inicio
+          </a>
+
+          <div class="sidebar-nav-group">
+            <a href="#prospects-clients" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
+              <i class="icon-people"></i> Clientes y prospectos
             </a>
-
-            <div class="sidebar-nav-group">
-                <a href="#prospects-clients" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                    <i class="icon-people"></i> Clientes y prospectos
-                </a>
-                <div id="prospects-clients" class="sidebar-nav-group collapse">
-                    <a href="prospect-new.html" class="sidebar-nav-link">Registrar</a>
-                    <a href="prospect-search.html" class="sidebar-nav-link">Consultar</a>
-                </div>
+            <div id="prospects-clients" class="sidebar-nav-group collapse">
+              <a href="prospect-new.html" class="sidebar-nav-link">Registrar</a>
+              <a href="prospect-search.html" class="sidebar-nav-link">Consultar</a>
             </div>
-
-            <div class="sidebar-nav-group">
-                <a href="#vehicles" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                    <i class="icon-speedometer"></i> Vehículos
-                </a>
-                <div id="vehicles" class="sidebar-nav-group collapse">
-                    <a href="vehicles.html" class="sidebar-nav-link">Catálogo</a>
-                    <a href="vehicle-search.html" class="sidebar-nav-link">Búsqueda avanzada</a>
-                </div>
-            </div>
-
-            <div class="sidebar-nav-group">
-                <a href="#agenda" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                    <i class="icon-calendar"></i> Agenda
-                </a>
-                <div id="agenda" class="sidebar-nav-group collapse">
-                    <a href="appointment-new.html" class="sidebar-nav-link">Registrar cita</a>
-                    <a href="appointment-update.html" class="sidebar-nav-link">Consultar cita</a>
-                </div>
-            </div>
-
           </div>
-          
-          <div class="sidebar-footer">
-            <a href="../general/signin.html" data-toggle="tooltip" title="Logout">
-              <i class="fa fa-power-off"></i>
+
+          <div class="sidebar-nav-group">
+            <a href="#vehicles" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
+              <i class="icon-speedometer"></i> Vehículos
             </a>
+            <div id="vehicles" class="sidebar-nav-group collapse">
+              <a href="vehicles.html" class="sidebar-nav-link">Catálogo</a>
+            </div>
+          </div>
+
+          <div class="sidebar-nav-group">
+            <a href="#agenda" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
+              <i class="icon-calendar"></i> Agenda
+            </a>
+            <div id="agenda" class="sidebar-nav-group collapse">
+              <a href="appointment-new.html" class="sidebar-nav-link">Registrar cita</a>
+              <a href="appointment-update.html" class="sidebar-nav-link">Consultar cita</a>
+            </div>
           </div>
 
         </div>
-        <!-- End of navigation bar -->
 
-        <!-- App Content -->
-        <div class="app-content">
-
-          <!-- Header -->
-          <nav class="navbar navbar-expand navbar-light bg-white">
-            <button type="button" class="btn btn-sidebar" data-toggle="sidebar">
-              <i class="fa fa-bars"></i>
-            </button>
-
-            <div class="navbar-brand">
-              <a href="index.html">
-                <img src="../../img/logo_toyota.png">
-              </a>
-            </div>
-          </nav>
-          <!-- End of header -->
-
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item active" aria-current="page">¡Bienvenido, Carlos Daniel Herrera Jiménez!</li>
-            </ol>
-          </nav>
-
-          <!-- All applications content goes here -->
-          <div class="container-fluid">
-
-          </div>
-          <!-- End of application content -->
-          
+        <div class="sidebar-footer">
+          <a href="../general/signin.html" data-toggle="tooltip" title="Logout">
+            <i class="fa fa-power-off"></i>
+          </a>
         </div>
+
+      </div>
+      <!-- End of navigation bar -->
+
+      <!-- App Content -->
+      <div class="app-content">
+
+        <!-- Header -->
+        <nav class="navbar navbar-expand navbar-light bg-white">
+          <button type="button" class="btn btn-sidebar" data-toggle="sidebar">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <div class="navbar-brand">
+            <a href="index.html">
+              <img src="../../img/logo_toyota.png">
+            </a>
+          </div>
+        </nav>
+        <!-- End of header -->
+
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page">¡Bienvenido!</li>
+          </ol>
+        </nav>
+
+        <!-- All applications content goes here -->
+        <div class="container-fluid">
+          <h3 class="text-center">Agenda</h3>
+          <table class="table" id="stockTable">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col" class="text-center">#</th>
+                <th scope="col" class="text-center">Nombre Cliente</th>
+                <th scope="col" class="text-center">Hora</th>
+                <th scope="col" class="text-center">Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="clickable-row">
+                <th scope="row" class="text-center">1</th>
+                <td class="text-center" id="mod1">Bryan Alberto Arreola Mungia</td>
+                <td class="text-center" id="ver1">5:00 p.m.</td>
+                <td class="text-center" id="pri1">Ver el ultimo ferrari que salio</td>
+              </tr>
+              <tr class="clickable-row">
+                  <th scope="row" class="text-center">2</th>
+                  <td class="text-center" id="mod1">Damaso Benicio Rodriguez</td>
+                  <td class="text-center" id="ver1">9:00 a.m.</td>
+                  <td class="text-center" id="pri1">Nomas para conocer</td>
+                </tr>
+            </tbody>
+          </table>
+          <hr>
+
+          <h3 class="text-center">Solicitudes</h3>
+          <table class="table" id="stockTable">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col" class="text-center">#</th>
+                <th scope="col" class="text-center">Imagen</th>
+                <th scope="col" class="text-center">Modelo</th>
+                <th scope="col" class="text-center">Versión</th>
+                <th scope="col" class="text-center">Precio</th>
+                <th scope="col" class="text-center">Agencia</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="clickable-row">
+                <th scope="row" class="text-center">1</th>
+                <td class="text-center">
+                  <img id="img1" src="../../img/YARIS-HB_BLANCO.png" class="img-fluid" width="100" height="100">
+                </td>
+                <td class="text-center" id="mod1">Yaris HB</td>
+                <td class="text-center" id="ver1">Core CVT</td>
+                <td class="text-center" id="pri1">$229,900.00</td>
+                <td style="color:green" class="text-center">Toyota Rey Kolliman</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+        <!-- End of application content -->
+
       </div>
     </div>
+  </div>
 
-    <!-- TODO: Descargarlo en la carpeta componentes y enlazarlos -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <!-- TODO: Descargarlo en la carpeta componentes y enlazarlos -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
-    <!-- Archivos de JavaScript locales -->
-    <script src="../../js/admin4b.min.js"></script>
-    <script src="../../js/admin4b.docs.js"></script>
-  </body>
+  <!-- Archivos de JavaScript locales -->
+  <script src="../../js/admin4b.min.js"></script>
+  <script src="../../js/admin4b.docs.js"></script>
+</body>
+
 </html>

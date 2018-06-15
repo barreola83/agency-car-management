@@ -28,65 +28,65 @@
 
         <!-- Start of navigation bar -->
         <div class="text-right">
-            <button type="button" class="btn btn-sidebar" data-dismiss="sidebar">
-              <span class="x"></span>
-            </button>
-          </div>
-  
-          <div class="sidebar-header">
-            <img src="../../img/user-photo.png" class="user-photo">
-            <p class="username">
-              Carlos Herrera
-              <small>Vendedor</small>
-            </p>
-          </div>
-  
-          <div id="sidebar-nav" class="sidebar-nav" data-children=".sidebar-nav-group">
-  
-            <a href="index.html" class="sidebar-nav-link">
-              <i class="icon-home"></i> Inicio
-            </a>
-  
-            <div class="sidebar-nav-group">
-                <a href="#prospects-clients" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                    <i class="icon-people"></i> Clientes y prospectos
-                </a>
-                <div id="prospects-clients" class="sidebar-nav-group collapse">
-                    <a href="prospect-new.html" class="sidebar-nav-link">Registrar</a>
-                    <a href="prospect-search.html" class="sidebar-nav-link">Consultar</a>
-                </div>
-            </div>
-  
-            <div class="sidebar-nav-group">
-                <a href="#vehicles" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                    <i class="icon-speedometer"></i> Vehículos
-                </a>
-                <div id="vehicles" class="sidebar-nav-group collapse">
-                    <a href="vehicles.html" class="sidebar-nav-link">Catálogo</a>
-                    <a href="vehicle-search.html" class="sidebar-nav-link">Búsqueda avanzada</a>
-                </div>
-            </div>
-  
-            <div class="sidebar-nav-group">
-                <a href="#agenda" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                    <i class="icon-calendar"></i> Agenda
-                </a>
-                <div id="agenda" class="sidebar-nav-group collapse">
-                    <a href="appointment-new.html" class="sidebar-nav-link">Registrar cita</a>
-                    <a href="appointment-update.html" class="sidebar-nav-link">Consultar cita</a>
-                </div>
-            </div>
-  
-          </div>
-          
-          <div class="sidebar-footer">
-            <a href="../general/signin.html" data-toggle="tooltip" title="Logout">
-              <i class="fa fa-power-off"></i>
-            </a>
-          </div>
-  
+          <button type="button" class="btn btn-sidebar" data-dismiss="sidebar">
+            <span class="x"></span>
+          </button>
         </div>
-        <!-- End of navigation bar -->
+
+        <div class="sidebar-header">
+          <img src="../../img/user-photo.png" class="user-photo">
+          <p class="username">
+            Carlos Herrera
+            <small>Vendedor</small>
+          </p>
+        </div>
+
+        <div id="sidebar-nav" class="sidebar-nav" data-children=".sidebar-nav-group">
+
+          <a href="index.html" class="sidebar-nav-link">
+            <i class="icon-home"></i> Inicio
+          </a>
+
+          <div class="sidebar-nav-group">
+            <a href="#prospects-clients" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
+              <i class="icon-people"></i> Clientes y prospectos
+            </a>
+            <div id="prospects-clients" class="sidebar-nav-group collapse">
+              <a href="prospect-new.html" class="sidebar-nav-link">Registrar</a>
+              <a href="prospect-search.html" class="sidebar-nav-link">Consultar</a>
+            </div>
+          </div>
+
+          <div class="sidebar-nav-group">
+            <a href="#vehicles" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
+              <i class="icon-speedometer"></i> Vehículos
+            </a>
+            <div id="vehicles" class="sidebar-nav-group collapse">
+              <a href="vehicles.html" class="sidebar-nav-link">Catálogo</a>
+              <a href="vehicle-search.html" class="sidebar-nav-link">Búsqueda avanzada</a>
+            </div>
+          </div>
+
+          <div class="sidebar-nav-group">
+            <a href="#agenda" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
+              <i class="icon-calendar"></i> Agenda
+            </a>
+            <div id="agenda" class="sidebar-nav-group collapse">
+              <a href="appointment-new.html" class="sidebar-nav-link">Registrar cita</a>
+              <a href="appointment-update.html" class="sidebar-nav-link">Consultar cita</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="sidebar-footer">
+          <a href="../general/signin.html" data-toggle="tooltip" title="Logout">
+            <i class="fa fa-power-off"></i>
+          </a>
+        </div>
+
+      </div>
+      <!-- End of navigation bar -->
 
       <!-- App Content -->
       <div class="app-content">
@@ -113,7 +113,13 @@
 
         <!-- All application's content goes here -->
         <div id="container" class="container-fluid">
-
+          <h6>Filtro</h6>
+          <select class="form-control" id="selFiltro">
+            <option value="../../img/YARIS-HB_BLANCO.png" selected>Deportivo</option>
+            <option value="../../img/YARIS-HB_AZUL.png">Muzle</option>
+            <option value="../../img/YARIS-HB_GRIS.png">Camioneta</option>
+          </select>
+          <br>
           <div class="container-fluid">
             <div class="table-responsive">
               <table class="table" id="stockTable">
@@ -133,7 +139,9 @@
                 <tbody>
                   <tr class="clickable-row">
                     <th scope="row" class="text-center">1</th>
-                    <td class="text-center"><img id="img1" src="../../img/YARIS-HB_BLANCO.png" class="img-fluid" width="100" height="100"></td>
+                    <td class="text-center">
+                      <img id="img1" src="../../img/YARIS-HB_BLANCO.png" class="img-fluid" width="100" height="100">
+                    </td>
                     <td class="text-center" id="mod1">Yaris HB</td>
                     <td class="text-center" id="ver1">Core CVT</td>
                     <td class="text-center" id="pri1">$229,900.00</td>
@@ -153,14 +161,14 @@
                     <td class="text-center" id="can1">20</td>
                     <td class="text-center">
                       <div class="form-group">
-                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender"
-                         onclick="setModalInformation('mod1', 'img1', 'ver1', 'sel1', 'pri1', 'can1')">
+                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalInformation('mod1', 'img1', 'ver1', 'sel1', 'pri1', 'can1')">
                           <i class="material-icons">add_shopping_cart</i>
                         </button>
                         <button class="btn btn-info" style="font-size:20px" title="Apartar" data-toggle="modal" data-target="#ModalApartar">
                           <i class="material-icons">book</i>
                         </button>
-                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar" disabled>
+                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar"
+                          disabled>
                           <i class="material-icons">compare_arrows</i>
                         </button>
                       </div>
@@ -169,7 +177,9 @@
 
                   <tr class="clickable-row">
                     <th scope="row" class="text-center">2</th>
-                    <td class="text-center"><img id="img2" src="../../img/COROLLA_BLANCO.png" class="img-fluid" width="100" height="100"></td>
+                    <td class="text-center">
+                      <img id="img2" src="../../img/COROLLA_BLANCO.png" class="img-fluid" width="100" height="100">
+                    </td>
                     <td class="text-center" id="mod2">Corolla</td>
                     <td class="text-center" id="ver2">Base MT</td>
                     <td class="text-center" id="pri2">$288,400.00</td>
@@ -186,14 +196,14 @@
                     <td class="text-center" id="can2">10</td>
                     <td class="text-center">
                       <div class="form-group">
-                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender"
-                         onclick="setModalInformation('mod2', 'img2', 'ver2', 'sel2', 'pri2', 'can2')">
+                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalInformation('mod2', 'img2', 'ver2', 'sel2', 'pri2', 'can2')">
                           <i class="material-icons">add_shopping_cart</i>
                         </button>
                         <button class="btn btn-info" style="font-size:20px" title="Apartar" data-toggle="modal" data-target="#ModalApartar">
                           <i class="material-icons">book</i>
                         </button>
-                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar" disabled>
+                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar"
+                          disabled>
                           <i class="material-icons">compare_arrows</i>
                         </button>
                       </div>
@@ -202,7 +212,9 @@
 
                   <tr class="clickable-row">
                     <th scope="row" class="text-center">3</th>
-                    <td class="text-center"><img id="img3" src="../../img/HIGHLANDER_BLANCO-PERLADO.png" class="img-fluid" width="100" height="100"></td>
+                    <td class="text-center">
+                      <img id="img3" src="../../img/HIGHLANDER_BLANCO-PERLADO.png" class="img-fluid" width="100" height="100">
+                    </td>
                     <td class="text-center" id="mod3">Highlander</td>
                     <td class="text-center" id="ver3">LE</td>
                     <td class="text-center" id="pri3">$565,000.00</td>
@@ -220,14 +232,14 @@
                     <td class="text-center" id="can3">5</td>
                     <td class="text-center">
                       <div class="form-group">
-                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender"
-                         onclick="setModalInformation('mod3', 'img3', 'ver3', 'sel3', 'pri3', 'can3')">
+                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalInformation('mod3', 'img3', 'ver3', 'sel3', 'pri3', 'can3')">
                           <i class="material-icons">add_shopping_cart</i>
                         </button>
                         <button class="btn btn-info" style="font-size:20px" title="Apartar" data-toggle="modal" data-target="#ModalApartar">
                           <i class="material-icons">book</i>
                         </button>
-                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar" disabled>
+                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar"
+                          disabled>
                           <i class="material-icons">compare_arrows</i>
                         </button>
                       </div>
@@ -236,7 +248,9 @@
 
                   <tr class="clickable-row">
                     <th scope="row" class="text-center">4</th>
-                    <td class="text-center"><img id="img4" src="../../img/RAV4_BLANCO.png" class="img-fluid" width="100" height="100"></td>
+                    <td class="text-center">
+                      <img id="img4" src="../../img/RAV4_BLANCO.png" class="img-fluid" width="100" height="100">
+                    </td>
                     <td class="text-center" id="mod4">RAV4</td>
                     <td class="text-center" id="ver4">LE</td>
                     <td class="text-center" id="pri4">$385,000.00</td>
@@ -255,15 +269,15 @@
                     <td class="text-center" id="can4">0</td>
                     <td class="text-center">
                       <div class="form-group">
-                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender"
-                         onclick="setModalInformation('mod4', 'img4', 'ver4', 'sel4', 'pri4', 'can4')" disabled>
+                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalInformation('mod4', 'img4', 'ver4', 'sel4', 'pri4', 'can4')"
+                          disabled>
                           <i class="material-icons">add_shopping_cart</i>
                         </button>
                         <button class="btn btn-info" style="font-size:20px" title="Apartar" data-toggle="modal" data-target="#ModalApartar" disabled>
                           <i class="material-icons">book</i>
                         </button>
                         <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar"
-                         onclick="setModalInformationForRequests('mod4', 'img4', 'ver4', 'sel4', 'pri4', 'can4')">
+                          onclick="setModalInformationForRequests('mod4', 'img4', 'ver4', 'sel4', 'pri4', 'can4')">
                           <i class="material-icons">compare_arrows</i>
                         </button>
                       </div>
@@ -272,7 +286,9 @@
 
                   <tr class="clickable-row">
                     <th scope="row" class="text-center">5</th>
-                    <td class="text-center"><img id="img5" src="../../img/TACOMA_BLANCO.png" class="img-fluid" width="100" height="100"></td>
+                    <td class="text-center">
+                      <img id="img5" src="../../img/TACOMA_BLANCO.png" class="img-fluid" width="100" height="100">
+                    </td>
                     <td class="text-center" id="mod5">Tacoma</td>
                     <td class="text-center" id="ver5">Sport 4x2</td>
                     <td class="text-center" id="pri5">$596,500.00</td>
@@ -291,14 +307,14 @@
                     <td class="text-center" id="can5">15</td>
                     <td class="text-center">
                       <div class="form-group">
-                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender"
-                         onclick="setModalInformation('mod5', 'img5', 'ver5', 'sel5', 'pri5', 'can5')">
+                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalInformation('mod5', 'img5', 'ver5', 'sel5', 'pri5', 'can5')">
                           <i class="material-icons">add_shopping_cart</i>
                         </button>
                         <button class="btn btn-info" style="font-size:20px" title="Apartar" data-toggle="modal" data-target="#ModalApartar">
                           <i class="material-icons">book</i>
                         </button>
-                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar" disabled>
+                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar"
+                          disabled>
                           <i class="material-icons">compare_arrows</i>
                         </button>
                       </div>
@@ -324,22 +340,22 @@
                   <hr>
                   <div class="col">
                     <div class="form-group">
-                        <label>Versión:</label>
-                        <input class="form-control" id="ModalVenderVersion" readonly>
+                      <label>Versión:</label>
+                      <input class="form-control" id="ModalVenderVersion" readonly>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="form-group">
-                        <label>Color:</label>
-                        <input class="form-control" id="ModalVenderColor" readonly>
+                      <label>Color:</label>
+                      <input class="form-control" id="ModalVenderColor" readonly>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="form-group">
-                        <label>Precio:</label>
-                        <input class="form-control" id="ModalVenderPrice" readonly>
+                      <label>Precio:</label>
+                      <input class="form-control" id="ModalVenderPrice" readonly>
                     </div>
                   </div>
 
@@ -347,29 +363,29 @@
                   <hr>
                   <div class="col">
                     <div class="form-group">
-                        <label>*RFC:</label>
-                        <input id="ModalVenderRFC" class="form-control">
+                      <label>*RFC:</label>
+                      <input id="ModalVenderRFC" class="form-control">
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="form-group">
-                        <label>Nombre:</label>
-                        <input id="ModalVenderName" class="form-control" readonly>
+                      <label>Nombre:</label>
+                      <input id="ModalVenderName" class="form-control" readonly>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="form-group">
-                        <label>Correo electrónico:</label>
-                        <input id="ModalVenderEmail" class="form-control" readonly>
+                      <label>Correo electrónico:</label>
+                      <input id="ModalVenderEmail" class="form-control" readonly>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="form-group">
-                        <label>Teléfono:</label>
-                        <input id="ModalVenderPhone" class="form-control" readonly>
+                      <label>Teléfono:</label>
+                      <input id="ModalVenderPhone" class="form-control" readonly>
                     </div>
                   </div>
 
@@ -391,25 +407,65 @@
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                  <img src="foto-prueba.png" alt="vehiculo.jpg" style="float: left;" width="320" height="240">
-                  <h3>Oz Toyota
-                    <small>65818</small>
-                  </h3>
-                  <h4>4 Pasajeros</h4>
-                  <h4>$20,000</h4>
-                  <h4>
-                      Cliente:
-                      <select class=“form-control”>
-                        <option value="rojo">Juan</option>
-                        <option value="azul">Rosa</option>
-                        <option value="blanco">Guillermo</option>
-                        <option value="negro">Ana</option>
-                      </select>
-                    </h4>
+                  <h3 id="ModalVenderModel"></h3>
+                  <img id="ModalVenderImage" class="img-fluid" style="float: left;">
+                  <h5>Información</h5>
+                  <hr>
+                  <div class="col">
+                    <div class="form-group">
+                      <label>Versión:</label>
+                      <input class="form-control" id="ModalVenderVersion" readonly>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label>Color:</label>
+                      <input class="form-control" id="ModalVenderColor" readonly>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label>Precio:</label>
+                      <input class="form-control" id="ModalVenderPrice" readonly>
+                    </div>
+                  </div>
+
+                  <h5>Cliente</h5>
+                  <hr>
+                  <div class="col">
+                    <div class="form-group">
+                      <label>*RFC:</label>
+                      <input id="ModalVenderRFC" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label>Nombre:</label>
+                      <input id="ModalVenderName" class="form-control" readonly>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label>Correo electrónico:</label>
+                      <input id="ModalVenderEmail" class="form-control" readonly>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label>Teléfono:</label>
+                      <input id="ModalVenderPhone" class="form-control" readonly>
+                    </div>
+                  </div>
+
                 </div>
                 <div class="modal-footer">
-                  <button id="btnModalApartar" type="button" class="btn btn-success" data-dismiss="modal">Aceptar</button>
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button id="btnModalApartar" type="button" class="btn btn-success" data-dismiss="modal">Registrar</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                 </div>
               </div>
             </div>
@@ -430,22 +486,22 @@
                   <hr>
                   <div class="col">
                     <div class="form-group">
-                        <label>Versión:</label>
-                        <input class="form-control" id="ModalSolicitarVersion" readonly>
+                      <label>Versión:</label>
+                      <input class="form-control" id="ModalSolicitarVersion" readonly>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="form-group">
-                        <label>Color:</label>
-                        <input class="form-control" id="ModalSolicitarColor" readonly>
+                      <label>Color:</label>
+                      <input class="form-control" id="ModalSolicitarColor" readonly>
                     </div>
                   </div>
 
                   <div class="col">
                     <div class="form-group">
-                        <label>Precio:</label>
-                        <input class="form-control" id="ModalSolicitarPrice" readonly>
+                      <label>Precio:</label>
+                      <input class="form-control" id="ModalSolicitarPrice" readonly>
                     </div>
                   </div>
 
@@ -525,13 +581,11 @@
     var foundFlag = false;
     var selectedAgencyFlag = false;
 
-    function changeImage(id, select)
-    {
+    function changeImage(id, select) {
       $("#" + id).attr("src", $("#" + select + " option:selected").val());
     }
 
-    function getAgencyInformation(select)
-    {
+    function getAgencyInformation(select) {
       var id = $("#" + select + " option:selected").val();
 
       if (id == "age1") {
@@ -555,8 +609,7 @@
       }
     }
 
-    function setModalInformation(model, image, version, select, price, quantity)
-    {
+    function setModalInformation(model, image, version, select, price, quantity) {
       $("#ModalVenderModel").text($("#" + model).text());
       $("#ModalVenderImage").attr("src", $("#" + image).attr("src"));
       $("#ModalVenderVersion").val($("#" + version).text());
@@ -565,8 +618,7 @@
       lastQuantity = $("#" + quantity);
     }
 
-    function setModalInformationForRequests(model, image, version, select, price, quantity)
-    {
+    function setModalInformationForRequests(model, image, version, select, price, quantity) {
       $("#ModalSolicitarModel").text($("#" + model).text());
       $("#ModalSolicitarImage").attr("src", $("#" + image).attr("src"));
       $("#ModalSolicitarVersion").val($("#" + version).text());
@@ -574,8 +626,7 @@
       $("#ModalSolicitarPrice").val($("#" + price).text());
     }
 
-    $("#ModalVenderRFC").on('keydown', function(e)
-    {
+    $("#ModalVenderRFC").on('keydown', function (e) {
       if (e.which == 13) {
         if ($("#ModalVenderRFC").val() == "FEFJ760519U91") {
           $("#ModalVenderName").val("Jesús Carlos Fernández Flores");
@@ -586,7 +637,7 @@
       }
     });
 
-    $("#btnModalVender").click(function() {
+    $("#btnModalVender").click(function () {
       if (foundFlag == true) {
         lastQuantity.text(parseInt(lastQuantity.text()) - 1);
         $("#container").prepend("<div class='alert alert-success alert-dismissible fade show' role='alert'><strong>Éxito:</strong> La venta se registró exitosamente.<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
@@ -594,7 +645,7 @@
       }
     });
 
-    $("#btnModalSolicitar").click(function() {
+    $("#btnModalSolicitar").click(function () {
       $("#container").prepend("<div class='alert alert-success alert-dismissible fade show' role='alert'><strong>Éxito:</strong> La solicitud fue enviada y se encuentra en espera de aprobación.<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
     });
   </script>
