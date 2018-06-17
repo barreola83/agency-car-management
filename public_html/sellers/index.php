@@ -9,12 +9,15 @@
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
 
   <!-- Archivos locales CSS -->
   <link href="../../css/admin4b.min.css" rel="stylesheet">
   <link href="../../css/admin4b-highlight.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+  <script src="js/main.js" type="text/javascript"></script>
   <title>Toyota Admin</title>
 </head>
 
@@ -40,7 +43,7 @@
 
         <div id="sidebar-nav" class="sidebar-nav" data-children=".sidebar-nav-group">
 
-          <a href="index.html" class="sidebar-nav-link">
+          <a href="index.php" class="sidebar-nav-link">
             <i class="icon-home"></i> Inicio
           </a>
 
@@ -49,8 +52,8 @@
               <i class="icon-people"></i> Clientes y prospectos
             </a>
             <div id="prospects-clients" class="sidebar-nav-group collapse">
-              <a href="prospect-new.html" class="sidebar-nav-link">Registrar</a>
-              <a href="prospect-search.html" class="sidebar-nav-link">Consultar</a>
+              <a href="prospect-new.php" class="sidebar-nav-link">Registrar</a>
+              <a href="prospect-search.php" class="sidebar-nav-link">Consultar</a>
             </div>
           </div>
 
@@ -59,7 +62,7 @@
               <i class="icon-speedometer"></i> Vehículos
             </a>
             <div id="vehicles" class="sidebar-nav-group collapse">
-              <a href="vehicles.html" class="sidebar-nav-link">Catálogo</a>
+              <a href="vehicles.php" class="sidebar-nav-link">Catálogo</a>
             </div>
           </div>
 
@@ -68,8 +71,8 @@
               <i class="icon-calendar"></i> Agenda
             </a>
             <div id="agenda" class="sidebar-nav-group collapse">
-              <a href="appointment-new.html" class="sidebar-nav-link">Registrar cita</a>
-              <a href="appointment-update.html" class="sidebar-nav-link">Consultar cita</a>
+              <a href="appointment-new.php" class="sidebar-nav-link">Registrar cita</a>
+              <a href="appointment-update.php" class="sidebar-nav-link">Consultar cita</a>
             </div>
           </div>
 
@@ -120,45 +123,69 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="clickable-row">
-                <th scope="row" class="text-center">1</th>
-                <td class="text-center" id="mod1">Bryan Alberto Arreola Mungia</td>
-                <td class="text-center" id="ver1">5:00 p.m.</td>
-                <td class="text-center" id="pri1">Ver el ultimo ferrari que salio</td>
-              </tr>
-              <tr class="clickable-row">
-                  <th scope="row" class="text-center">2</th>
-                  <td class="text-center" id="mod1">Damaso Benicio Rodriguez</td>
-                  <td class="text-center" id="ver1">9:00 a.m.</td>
-                  <td class="text-center" id="pri1">Nomas para conocer</td>
-                </tr>
+              <?php
+                require "funciones.php";
+                $conn=ConectarBD();
+                $query="Select appointments.id,prospects_clients.name,prospects_clients.first_last_name,prospects_clients.second_last_name,appointments.date_time,appointments.subject FROM appointments INNER JOIN prospects_clients ON appointments.id_prospect_client=prospects_clients.id WHERE appointments.id_user=4";//.$_POST["id_user"];
+                $result=$conn->query($query);
+                if($conn->error){
+                    die("Error en la consulta".$conn->error);
+                }
+                while($row=$result->fetch_assoc()){
+                    ?>
+                    <tr>
+                        <td class="text-center"><?php echo $row["id"]?></td>
+												<td class="text-center">
+                          <?php echo $row["name"]?> <?php echo $row["first_last_name"]?> <?php echo $row["second_last_name"]?>
+                        </td>
+												<td class="text-center"><?php echo $row["date_time"]?></td>
+												<td class="text-center"><?php echo $row["subject"]?></td>
+                    </tr>
+                <?php }
+            ?>
             </tbody>
           </table>
           <hr>
 
           <h3 class="text-center">Solicitudes</h3>
-          <table class="table" id="stockTable">
+          <table class="table" id="requestsTable">
             <thead class="thead-light">
               <tr>
                 <th scope="col" class="text-center">#</th>
                 <th scope="col" class="text-center">Imagen</th>
                 <th scope="col" class="text-center">Modelo</th>
                 <th scope="col" class="text-center">Versión</th>
-                <th scope="col" class="text-center">Precio</th>
                 <th scope="col" class="text-center">Agencia</th>
+                <th scope="col" class="text-center">Estatus</th>
+                <th scope="col" class="text-center">Acciones</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="clickable-row">
-                <th scope="row" class="text-center">1</th>
-                <td class="text-center">
-                  <img id="img1" src="../../img/YARIS-HB_BLANCO.png" class="img-fluid" width="100" height="100">
-                </td>
-                <td class="text-center" id="mod1">Yaris HB</td>
-                <td class="text-center" id="ver1">Core CVT</td>
-                <td class="text-center" id="pri1">$229,900.00</td>
-                <td style="color:green" class="text-center">Toyota Rey Kolliman</td>
-              </tr>
+            <?php
+                $query="Select requests.id,automobiles.id_version,nodes.name,requests.status FROM requests INNER JOIN automobiles ON requests.id_automobile=automobiles.id INNER JOIN nodes ON requests.id_owner_node=nodes.id WHERE requests.id_requester_seller=4";//.$_POST["id_user"];
+                $result=$conn->query($query);
+                if($conn->error){
+                    die("Error en la consulta".$conn->error);
+                }
+                while($row=$result->fetch_assoc()){
+                    ?>
+                    <tr>
+                      <td class="text-center"><?php echo $row["id"]?></td>
+                      <td class="text-center">img</td>
+                      <td class="text-center"><?php echo $row["id_version"]?></td>
+                      <td class="text-center">3</td>
+											<td class="text-center"><?php echo $row["name"]?></td>
+											<td class="text-center"><?php echo $row["status"]?></td>
+                      <td class="text-center">
+                        <div class="form-group">
+                          <button class="btn btn-danger" style="font-size:20px" title="Cancelar Solicitud" onclick="CancelarSolicitud(this,<?php echo $row["id"]?>)">
+                            <i class="material-icons">compare_arrows</i>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                <?php }
+            ?>
             </tbody>
           </table>
 
@@ -170,7 +197,7 @@
   </div>
 
   <!-- TODO: Descargarlo en la carpeta componentes y enlazarlos -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>

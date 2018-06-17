@@ -40,7 +40,7 @@
 
         <div id="sidebar-nav" class="sidebar-nav" data-children=".sidebar-nav-group">
 
-          <a href="index.html" class="sidebar-nav-link">
+          <a href="index.php" class="sidebar-nav-link">
             <i class="icon-home"></i> Inicio
           </a>
 
@@ -49,8 +49,8 @@
                   <i class="icon-people"></i> Clientes y prospectos
               </a>
               <div id="prospects-clients" class="sidebar-nav-group collapse">
-                  <a href="prospect-new.html" class="sidebar-nav-link">Registrar</a>
-                  <a href="prospect-search.html" class="sidebar-nav-link">Consultar</a>
+                  <a href="prospect-new.php" class="sidebar-nav-link">Registrar</a>
+                  <a href="prospect-search.php" class="sidebar-nav-link">Consultar</a>
               </div>
           </div>
 
@@ -59,7 +59,7 @@
                   <i class="icon-speedometer"></i> Vehículos
               </a>
               <div id="vehicles" class="sidebar-nav-group collapse">
-                  <a href="vehicles.html" class="sidebar-nav-link">Catálogo</a>
+                  <a href="vehicles.php" class="sidebar-nav-link">Catálogo</a>
               </div>
           </div>
 
@@ -68,8 +68,8 @@
                   <i class="icon-calendar"></i> Agenda
               </a>
               <div id="agenda" class="sidebar-nav-group collapse">
-                  <a href="appointment-new.html" class="sidebar-nav-link">Registrar cita</a>
-                  <a href="appointment-update.html" class="sidebar-nav-link">Consultar cita</a>
+                  <a href="appointment-new.php" class="sidebar-nav-link">Registrar cita</a>
+                  <a href="appointment-update.php" class="sidebar-nav-link">Consultar cita</a>
               </div>
           </div>
 
@@ -124,7 +124,7 @@
             <div class="col">
               <div class="form-group">
                 <label>*RFC:</label>
-                <input type="text" class="form-control" name="rfc">
+                <input type="text" class="form-control" name="rfc" required>
               </div>
             </div>
           </div>
@@ -133,21 +133,21 @@
             <div class="col">
               <div class="form-group">
                 <label>*Nombre:</label>
-                <input type="text" class="form-control" name="name">
+                <input type="text" class="form-control" name="name" required>
               </div>
             </div>
 
             <div class="col">
               <div class="form-group">
                 <label>*Apellido paterno:</label>
-                <input type="text" class="form-control" name="first_last_name">
+                <input type="text" class="form-control" name="first_last_name" required>
               </div>
             </div>
 
             <div class="col">
               <div class="form-group">
                 <label>Apellido materno:</label>
-                <input type="text" class="form-control" name="second_last_name">
+                <input type="text" class="form-control" name="second_last_name" required>
               </div>
             </div>
           </div>
@@ -156,7 +156,7 @@
             <div class="col">
               <div class="form-group">
                 <label>*Domicilio:</label>
-                <input type="text" class="form-control" name="home_address">
+                <input type="text" class="form-control" name="home_address" required>
               </div>
             </div>
           </div>
@@ -165,14 +165,14 @@
             <div class="col">
               <div class="form-group">
                 <label>*Correo electrónico:</label>
-                <input type="text" class="form-control" name="email">
+                <input type="text" class="form-control" name="email" required>
               </div>
             </div>
 
             <div class="col">
               <div class="form-group">
                 <label>*Teléfono:</label>
-                <input type="tel" class="form-control" name="phone">
+                <input type="tel" class="form-control" name="phone" required>
               </div>
             </div>
           </div>
