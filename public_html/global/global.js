@@ -9,27 +9,6 @@ $(document).ready(function () {
     //$(".breadcrumb-item").text("¡Bienvenido, " + username + "!");
     $("#welcomeMessage").text("¡Bienvenido, " + username + "!");
 
-
-    $(function () {
-        $.ajax({
-            url: "http://localhost/retrieve_states.php",
-            dataType: 'json',
-            type: "POST",
-            crossDomain: true,
-            success: function (response) {
-                //console.log(response);
-                let html;
-                $.each(response, function (index, value) {
-                    html += "<option id=" + value.id + ">" + value.state + "</option>";
-                });
-                $("#selState").html(html);
-            },
-            error: function (jqXhr, textStatus, errorMessage) {
-                console.log('Error: ' + errorMessage);
-            }
-        });
-    });
-
     $(function () {
         $.ajax({
             url: "http://localhost/retrieve_nodes_info.php",
@@ -56,6 +35,10 @@ $(document).ready(function () {
             }
         });
     });
+
+    $(function(){
+        retrieveStates();
+    })
 
     $('#stockTable, #agencyListTable').on('click', '.clickable-row', function (event) {
         if ($(this).hasClass('active-row')) {
@@ -96,7 +79,7 @@ $(document).ready(function () {
             type: "POST",
             crossDomain: true,
             success: function (response) {
-                console.log(response);
+                //console.log(response);
                 if (response == null || response == 'undefined') {
                     $("#editAgencyModal").html(customErrorMessage);
                 } else {
@@ -106,10 +89,10 @@ $(document).ready(function () {
                     (response["0"].internal_number == 0) ? $("#intNumber").val("") : $("#intNumber").val(response.internal_number);
                     $("#zip_code").val(response["0"].zip_code);
                     $("#neighborhood").val(response["0"].neighborhood);
-                    $("#selState").val(response["0"].id_state);
+                    $("#selState option[value='" + response.id_state + "']").prop("selected", true);
                     $("#selTown").val(response["0"].id_town);
                     $("#selType").val((response["0"].type).replace("_", " "));
-                    $("#phoneNumber").val(response["0"].phone);
+                    $("#phoneNumber").val((response["0"].phone).replace(" ", ""));
                     $("#website").val(response["0"].website);
 
                 }
@@ -125,12 +108,33 @@ $(document).ready(function () {
         //console.log("Se envió: " + $("#model option:selected").text());
         retrieveVersion($("#model option:selected").text());
         retrieveColors($("#model option:selected").text());
+        getAmountAvailable($("#model option:selected").text(), $("#version option:selected").attr("id"), $("#color option:selected").attr("id"));
     });
 
     $("#selState").change(function () {
         //console.log($("#selState option:selected").attr("id"));
         retrieveTownsPerState($("#selState option:selected").attr("id"));
     });
+
+    function retrieveStates() {
+        $.ajax({
+            url: "http://localhost/retrieve_states.php",
+            dataType: 'json',
+            type: "POST",
+            crossDomain: true,
+            success: function (response) {
+                //console.log(response);
+                let html;
+                $.each(response, function (index, value) {
+                    html += "<option id=" + value.id + ">" + value.state + "</option>";
+                });
+                $("#selState").html(html);
+            },
+            error: function (jqXhr, textStatus, errorMessage) {
+                console.log('Error: ' + errorMessage);
+            }
+        });
+    }
 
     function retrieveModel() {
         $.ajax({
@@ -159,7 +163,6 @@ $(document).ready(function () {
     }
 
     function retrieveVersion(version) {
-        console.log("En retrieveVersion se recibió: " + version);
         $.ajax({
             data: { "model": version },
             url: "http://localhost/retrieve_versions.php",
@@ -167,7 +170,7 @@ $(document).ready(function () {
             type: "POST",
             crossDomain: true,
             success: function (response) {
-                console.log("VERSIONS ", response);
+                //console.log("VERSIONS ", response);
                 if (response == null || response == 'undefined') {
                     $("#addCarModalBody").html(errorMessage);
                     console.log("response null or undefined in version select.");
@@ -187,7 +190,6 @@ $(document).ready(function () {
     }
 
     function retrieveColors(color) {
-        console.log("En retrieveColors se recibió: " + color);
         $.ajax({
             data: { "color": color },
             url: "http://localhost/retrieve_colors.php",
@@ -195,7 +197,7 @@ $(document).ready(function () {
             type: "POST",
             crossDomain: true,
             success: function (response) {
-                console.log("COLORS ", response);
+                //console.log("COLORS ", response);
                 if (response == null || response == 'undefined') {
                     $("#addCarModalBody").html(errorMessage);
                     console.log("response null or undefined in color select.");
@@ -225,6 +227,7 @@ $(document).ready(function () {
             type: "POST",
             crossDomain: true,
             success: function (response) {
+                console.log(response);
                 /*if (response == null || response == 'undefined') {
                     $("#amount_available").val("Error, por favor intente de nuevo.");
                     console.log("response null or undefined in color select.");
@@ -420,7 +423,7 @@ $(document).ready(function () {
             type: 'POST',
             crossDomain: true,
             success: function (response) {
-                console.log(response);
+                //console.log(response);
                 let html;
                 $.each(response, function (index, value) {
                     html += "<option id=" + value.id + ">" + value.town_name + "</option>";
