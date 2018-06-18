@@ -106,10 +106,11 @@ $(document).ready(function () {
                     (response["0"].internal_number == 0) ? $("#intNumber").val("") : $("#intNumber").val(response.internal_number);
                     $("#zip_code").val(response["0"].zip_code);
                     $("#neighborhood").val(response["0"].neighborhood);
-                    $("#selState").val(response["0"].id_state);
+                    //$("#selState").val(response["0"].id_state);
+                    $("#selState option[value='7']").prop({defaultSelected: true});
                     $("#selTown").val(response["0"].id_town);
                     $("#selType").val((response["0"].type).replace("_", " "));
-                    $("#phoneNumber").val(response["0"].phone);
+                    $("#phoneNumber").val((response["0"].phone).replace(" ", ""));
                     $("#website").val(response["0"].website);
 
                 }
@@ -420,7 +421,7 @@ $(document).ready(function () {
             type: 'POST',
             crossDomain: true,
             success: function (response) {
-                console.log(response);
+                //console.log(response);
                 let html;
                 $.each(response, function (index, value) {
                     html += "<option id=" + value.id + ">" + value.town_name + "</option>";
