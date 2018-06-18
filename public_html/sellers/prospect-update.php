@@ -21,13 +21,13 @@
       <div class="app-body">
         <div class="app-sidebar sidebar-dark sidebar-slide-left">
 
-          <!-- Start of navigation bar -->
-          <div class="text-right">
+        <!-- Start of navigation bar -->
+        <div class="text-right">
             <button type="button" class="btn btn-sidebar" data-dismiss="sidebar">
               <span class="x"></span>
             </button>
           </div>
-
+  
           <div class="sidebar-header">
             <img src="../../img/user-photo.png" class="user-photo">
             <p class="username">
@@ -35,60 +35,50 @@
               <small>Vendedor</small>
             </p>
           </div>
-
+  
           <div id="sidebar-nav" class="sidebar-nav" data-children=".sidebar-nav-group">
-
-            <a href="index.html" class="sidebar-nav-link">
+  
+            <a href="index.php" class="sidebar-nav-link">
               <i class="icon-home"></i> Inicio
             </a>
-
+  
             <div class="sidebar-nav-group">
                 <a href="#prospects-clients" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
                     <i class="icon-people"></i> Clientes y prospectos
                 </a>
                 <div id="prospects-clients" class="sidebar-nav-group collapse">
-                    <a href="prospect-new.html" class="sidebar-nav-link">Registrar</a>
-                    <a href="prospect-search.html" class="sidebar-nav-link">Consultar</a>
+                    <a href="prospect-new.php" class="sidebar-nav-link">Registrar</a>
+                    <a href="prospect-search.php" class="sidebar-nav-link">Consultar</a>
                 </div>
             </div>
-
+  
             <div class="sidebar-nav-group">
                 <a href="#vehicles" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
                     <i class="icon-speedometer"></i> Vehículos
                 </a>
                 <div id="vehicles" class="sidebar-nav-group collapse">
-                    <a href="vehicles.html" class="sidebar-nav-link">Catálogo</a>
-                    <a href="vehicle-search.html" class="sidebar-nav-link">Búsqueda avanzada</a>
+                    <a href="vehicles.php" class="sidebar-nav-link">Catálogo</a>
                 </div>
             </div>
-
-            <div class="sidebar-nav-group">
-                <a href="#sales" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                    <i class="icon-wallet"></i> Ventas
-                </a>
-                <div id="sales" class="sidebar-nav-group collapse">
-                    <a href="vehicle-new.html" class="sidebar-nav-link">Registrar</a>
-                </div>
-            </div>
-
+  
             <div class="sidebar-nav-group">
                 <a href="#agenda" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
                     <i class="icon-calendar"></i> Agenda
                 </a>
                 <div id="agenda" class="sidebar-nav-group collapse">
-                    <a href="appointment-new.html" class="sidebar-nav-link">Registrar cita</a>
-                    <a href="update-appointment.html" class="sidebar-nav-link">Consultar cita</a>
+                    <a href="appointment-new.php" class="sidebar-nav-link">Registrar cita</a>
+                    <a href="appointment-update.php" class="sidebar-nav-link">Consultar cita</a>
                 </div>
             </div>
-
+  
           </div>
           
           <div class="sidebar-footer">
-            <a href="./pages/sample-pages/signin.html" data-toggle="tooltip" title="Logout">
+            <a href="../general/signin.html" data-toggle="tooltip" title="Logout">
               <i class="fa fa-power-off"></i>
             </a>
           </div>
-
+  
         </div>
         <!-- End of navigation bar -->
 
@@ -117,66 +107,72 @@
 
           <!-- All application's content goes here -->
           <div class="container-fluid">
-            <h2 style="text-align:center">Registrar Nueva Venta</h2>
+            <h2 style="text-align:center">Cliente</h2>
 
             <div class="row">
               <div class="col col-md-12 col-lg-12">
                 <div class="form-group">
                   <label>
-                    Vehiculo <small class="text-secondary">(requerido)</small>
+                    Nombre <small class="text-secondary">(requerido)</small>
                   </label>
-                  <input class="form-control" type="search" placeholder="Camry">
+                  <input class="form-control" type="text" placeholder="Christian">
                 </div>
               </div>
-
-              <div class="container-fluid">
-                <div class="table-responsive">
-                  <table class="table" id="stockTable">
-                    <thead class="thead-light">
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Agencia</th>
-                        <th scope="col">ID Agencia</th>
-                        <th scope="col">Automóvil</th>
-                        <th scope="col">ID Automóvil</th>
-                        <th scope="col">Stock status</th>
-                        <th scope="col">Cantidad</th>
-                        <th scope="col">Acciones</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class="clickable-row">
-                        <th scope="row">1</th>
-                        <td>OZ Toyota</td>
-                        <td>65498</td>
-                        <td>Camry 2018 LE Rojo</td>
-                        <td>84654</td>
-                        <td style="color:green">In stock</td>
-                        <td id="stockLeft">21</td>
-                        <td id="acciones">
-                          <div class="form-group">
-                            <button class="btn btn-block btn-success">Vender</button>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr class="clickable-row">
-                        <th scope="row">2</th>
-                        <td>OZ Toyota</td>
-                        <td>65498</td>
-                        <td>Camry 2018 XLE Negro</td>
-                        <td>84654</td>
-                        <td style="color:green">In stock</td>
-                        <td id="stockLeft">2</td>
-                        <td id="acciones">
-                          <div class="form-group">
-                            <button class="btn btn-block btn-success">Vender</button>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+              <div class="col col-md-12 col-lg-12">
+                <div class="form-group">
+                  <label>
+                    Apellido Paterno <small class="text-secondary">(requerido)</small>
+                  </label>
+                  <input class="form-control" type="text" placeholder="Cagide">
                 </div>
               </div>
+              <div class="col col-md-12 col-lg-12">
+                <div class="form-group">
+                  <label>
+                    Apellido Materno <small class="text-secondary">(requerido)</small>
+                  </label>
+                  <input class="form-control" type="text" placeholder="X">
+                </div>
+              </div>
+              <div class="col col-md-12 col-lg-12">
+                <div class="form-group">
+                  <label>
+                    RFC <small class="text-secondary">(requerido)</small>
+                  </label>
+                  <input class="form-control" type="text" placeholder="SDASFR4534">
+                </div>
+              </div>
+              <div class="col col-md-12 col-lg-12">
+                <div class="form-group">
+                  <label>
+                    Direccion <small class="text-secondary">(requerido)</small>
+                  </label>
+                  <input class="form-control" type="text" placeholder="pasceis #55">
+                </div>
+              </div>
+              <div class="col col-md-12 col-lg-12">
+                <div class="form-group">
+                  <label>
+                    Correo <small class="text-secondary">(requerido)</small>
+                  </label>
+                  <input class="form-control" type="text">
+                </div>
+              </div>
+              <div class="col col-md-12 col-lg-12">
+                <div class="form-group">
+                  <label>
+                    Telefono <small class="text-secondary">(requerido)</small>
+                  </label>
+                  <input class="form-control" type="text">
+                </div>
+              </div>
+              <div class="col col-md-9 col-lg-9"></div>
+              <div class="col col-md-3 col-lg-3">
+                <div class="form-group">
+                  <button class="btn btn-block btn-success">Guardar Cambios</button>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- End of application content -->
           

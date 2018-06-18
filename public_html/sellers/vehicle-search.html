@@ -13,6 +13,8 @@
     <!-- Archivos locales CSS -->
     <link href="../../css/admin4b.min.css" rel="stylesheet">
     <link href="../../css/admin4b-highlight.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
     <title>Toyota Admin</title>
   </head>
 
@@ -21,13 +23,13 @@
       <div class="app-body">
         <div class="app-sidebar sidebar-dark sidebar-slide-left">
 
-          <!-- Start of navigation bar -->
-          <div class="text-right">
+        <!-- Start of navigation bar -->
+        <div class="text-right">
             <button type="button" class="btn btn-sidebar" data-dismiss="sidebar">
               <span class="x"></span>
             </button>
           </div>
-
+  
           <div class="sidebar-header">
             <img src="../../img/user-photo.png" class="user-photo">
             <p class="username">
@@ -35,13 +37,13 @@
               <small>Vendedor</small>
             </p>
           </div>
-
+  
           <div id="sidebar-nav" class="sidebar-nav" data-children=".sidebar-nav-group">
-
+  
             <a href="index.html" class="sidebar-nav-link">
               <i class="icon-home"></i> Inicio
             </a>
-
+  
             <div class="sidebar-nav-group">
                 <a href="#prospects-clients" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
                     <i class="icon-people"></i> Clientes y prospectos
@@ -51,7 +53,7 @@
                     <a href="prospect-search.html" class="sidebar-nav-link">Consultar</a>
                 </div>
             </div>
-
+  
             <div class="sidebar-nav-group">
                 <a href="#vehicles" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
                     <i class="icon-speedometer"></i> Vehículos
@@ -61,34 +63,25 @@
                     <a href="vehicle-search.html" class="sidebar-nav-link">Búsqueda avanzada</a>
                 </div>
             </div>
-
-            <div class="sidebar-nav-group">
-                <a href="#sales" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                    <i class="icon-wallet"></i> Ventas
-                </a>
-                <div id="sales" class="sidebar-nav-group collapse">
-                    <a href="vehicle-new.html" class="sidebar-nav-link">Registrar</a>
-                </div>
-            </div>
-
+  
             <div class="sidebar-nav-group">
                 <a href="#agenda" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
                     <i class="icon-calendar"></i> Agenda
                 </a>
                 <div id="agenda" class="sidebar-nav-group collapse">
                     <a href="appointment-new.html" class="sidebar-nav-link">Registrar cita</a>
-                    <a href="update-appointment.html" class="sidebar-nav-link">Consultar cita</a>
+                    <a href="appointment-update.html" class="sidebar-nav-link">Consultar cita</a>
                 </div>
             </div>
-
+  
           </div>
           
           <div class="sidebar-footer">
-            <a href="./pages/sample-pages/signin.html" data-toggle="tooltip" title="Logout">
+            <a href="../general/signin.html" data-toggle="tooltip" title="Logout">
               <i class="fa fa-power-off"></i>
             </a>
           </div>
-
+  
         </div>
         <!-- End of navigation bar -->
 
@@ -197,8 +190,7 @@
               <div class="col col-md-6 col-lg-6"></div>
               <div class="col col-md-3 col-lg-3">
                 <div class="form-group">
-                  <button class="btn btn-block btn-success">Buscar</button>
-                  
+                  <button id="btnBuscarVehiculo" class="btn btn-block btn-success">Buscar</button>
                 </div>
               </div>
               <div class="col col-md-3 col-lg-3">
