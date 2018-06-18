@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8">
 
     <!-- TODO: Descargarlo en la carpeta de componentes -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
@@ -97,11 +96,11 @@
                         </a>
                     </div>
 
-                    
+
                 </nav>
                 <!-- End of header -->
 
-                <nav aria-label="breadcrumb">
+                <nav aria-label="breadcrumb" id="navBar">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item active" aria-current="page">Registrar nueva agencia</li>
                     </ol>
@@ -110,114 +109,138 @@
                 <!-- All applications content goes here -->
                 <div class="container-fluid">
 
-                    <div class="row">
-                        <div class="col ">
-                            <div class="form-group">
-                                <label>Nombre</label>
-                                <input type="text" class="form-control" id="name">
+                    <form class="needs-validation" id="registerForm" novalidate>
+                        <div class="row">
+                            <div class="col ">
+                                <div class="form-group">
+                                    <label>
+                                        <span class="text-danger">*</span>Nombre</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                    <div class="invalid-feedback">
+                                        Ingrese un nombre.
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="col ">
+                                <div class="form-group">
+                                    <label>
+                                        <span class="text-danger">*</span>Calle</label>
+                                    <input type="text" class="form-control" id="street" required>
+                                    <div class="invalid-feedback">
+                                        Debe completar el campo.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col ">
+                                <div class="form-group">
+                                    <label>
+                                        <span class="text-danger">*</span>Exterior</label>
+                                    <input type="number" class="form-control" id="extNumber" required>
+                                    <div class="invalid-feedback">
+                                        Ingrese un número.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col ">
+                                <div class="form-group">
+                                    <label>Interior
+                                    </label>
+                                    <input type="number" class="form-control" placeholder="opcional" id="intNumber">
+                                </div>
+                            </div>
+                            <div class="col ">
+                                <div class="form-group">
+                                    <label>
+                                        <span class="text-danger">*</span>Código postal</label>
+                                    <input type="number" class="form-control" id="zip_code" required>
+                                    <div class="invalid-feedback">
+                                        Ingrese un código postal.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col ">
+                                <div class="form-group">
+                                    <label>
+                                        <span class="text-danger">*</span>Colonia
+                                    </label>
+                                    <input type="text" class="form-control" id="neighborhood" required>
+                                    <div class="invalid-feedback">
+                                        Debe completar el campo.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col ">
+                                <div class="form-group">
+                                    <label>
+                                        <span class="text-danger">*</span>Estado:
+                                    </label>
+                                    <select class="form-control" id="selState">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col ">
+                                <div class="form-group">
+                                    <label>
+                                        <span class="text-danger">*</span>Ciudad:
+                                    </label>
+                                    <select class="form-control" id="selTown">
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col ">
+                                <div class="form-group">
+                                    <label>
+                                        <span class="text-danger">*</span>Tipo:
+                                    </label>
+                                    <select class="form-control" id="selType">
+                                        <option selected>Headquarters</option>
+                                        <option>Agency</option>
+                                        <option>Branch office</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col ">
+                                <div class="form-group">
+                                    <label>
+                                        <span class="text-danger">*</span>Teléfono
+                                    </label>
+                                    <input type="number" class="form-control" id="phoneNumber" required>
+                                    <div class="invalid-feedback">
+                                        Debe completar el campo
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col ">
+                                <div class="form-group">
+                                    <label>
+                                        <span class="text-danger">*</span>Sitio web
+                                    </label>
+                                    <input type="text" class="form-control" id="website" required>
+                                    <div class="invalid-feedback">
+                                        Ingrese una URL.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success" type="submit">
+                                Registrar
+                            </button>
+                        </div>
+                    </form>
 
-                    <div class="row">
-                        <div class="col ">
-                            <div class="form-group">
-                                <label>Calle</label>
-                                <input type="text" class="form-control" id="street">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col ">
-                            <div class="form-group">
-                                <label>Exterior</label>
-                                <input type="number" class="form-control" id="extNumber">
-                            </div>
-                        </div>
-                        <div class="col ">
-                            <div class="form-group">
-                                <label>Interior
-                                </label>
-                                <input type="number" class="form-control" placeholder="opcional" id="intNumber">
-                            </div>
-                        </div>
-                        <div class="col ">
-                            <div class="form-group">
-                                <label>Código postal</label>
-                                <input type="number" class="form-control" id="zip_code">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col ">
-                            <div class="form-group">
-                                <label>
-                                    Colonia
-                                </label>
-                                <input type="text" class="form-control" id="neighborhood">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col ">
-                            <div class="form-group">
-                                <label>
-                                    Estado:
-                                </label>
-                                <select class="form-control" id="selState">
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col ">
-                            <div class="form-group">
-                                <label>
-                                    Ciudad:
-                                </label>
-                                <select class="form-control" id="selTown">
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col ">
-                            <div class="form-group">
-                                <label for="sel1">Tipo:</label>
-                                <select class="form-control" id="selType">
-                                    <option>Headquarters</option>
-                                    <option>Agency</option>
-                                    <option>Branch office</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col ">
-                            <div class="form-group">
-                                <label>
-                                    Teléfono
-                                </label>
-                                <input type="number" class="form-control" id="phoneNumber">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col ">
-                            <div class="form-group">
-                                <label>
-                                    Sitio web
-                                </label>
-                                <input type="text" class="form-control" id="website">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <button class="btn btn-success" id="submitReg">
-                            Registrar
-                        </button>
-                    </div>
 
                 </div>
                 <!-- End of application content -->
@@ -227,8 +250,7 @@
     </div>
 
     <!-- TODO: Descargarlo en la carpeta componentes y enlazarlos -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
