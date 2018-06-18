@@ -1,23 +1,18 @@
 <?php
 require "funciones.php";
 $conn=ConectarBD();
-$Nombre=test_input($_POST["Nombre"]);
-if($Nombre==""){
-    die("Debes escribir un nombre");
-}
-$result=$conn->query("Insert into prospects_clients(RFC,name,first_last_name,second_last_name,home_address,email,phone) values('".$Nombre."','".$Alias."','".$Alineacion."','".$Historia."')");
+$Tipo=$_POST["Tipo"];
+$RFC=$_POST["RFC"];
+$Nombre=$_POST["Nombre"];
+$Ap=$_POST["Ap"];
+$Am=$_POST["Am"];
+$Domicilio=$_POST["Domicilio"];
+$Correo=$_POST["Correo"];
+$Tel=$_POST["Tel"];
+
+$result=$conn->query("Insert into prospects_clients(type,RFC,name,first_last_name,second_last_name,home_address,email,phone) values('".$Tipo."','".$RFC."','".$Nombre."','".$Ap."','".$Am."','".$Domicilio."','".$Correo."','".$Tel."')");
 if($conn->error){
     die("Error en el query".$conn->error);
 }
-$row=$result->fetch_assoc();
+echo "OK";
 ?>
-<tr>
-    <td><?php echo $row["Ch_Nombre"]?></td>
-	<td><?php echo $row["Ch_Alias"]?></td>
-	<td><?php echo $row["Ch_Alineacion"]?></td>
-    <td><?php echo $row["Ch_Historia"]?></td>
-    <td>
-        <input type="button" value="Editar" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ModalForm" onclick="loadEdit(this,<?php echo $row["Ch_Id"];?>)">
-        <input type="button" value="Eliminar" class="btn btn-danger btn-sm" onclick="Eliminar(this,<?php echo $row["Ch_Id"];?>)">
-    </td>
-</tr>

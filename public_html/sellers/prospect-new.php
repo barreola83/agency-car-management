@@ -15,6 +15,8 @@
   <!-- Archivos locales CSS -->
   <link href="../../css/admin4b.min.css" rel="stylesheet">
   <link href="../../css/admin4b-highlight.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+  <script src="js/main.js" type="text/javascript"></script>
   <title>Toyota Admin</title>
 </head>
 
@@ -114,7 +116,7 @@
             <div class="col">
               <div class="form-group">
                 <label>Tipo:</label>
-                <select class="form-control" name="type">
+                <select class="form-control" name="type" id="idTipo">
                   <option value="PROSPECT" selected>Prospecto</option>
                   <option value="CLIENT">Cliente</option>
                 </select>
@@ -124,7 +126,7 @@
             <div class="col">
               <div class="form-group">
                 <label>*RFC:</label>
-                <input type="text" class="form-control" name="rfc" required>
+                <input id="idRFC" type="text" class="form-control" name="rfc" required>
               </div>
             </div>
           </div>
@@ -133,21 +135,21 @@
             <div class="col">
               <div class="form-group">
                 <label>*Nombre:</label>
-                <input type="text" class="form-control" name="name" required>
+                <input id="idNombre" type="text" class="form-control" name="name" required>
               </div>
             </div>
 
             <div class="col">
               <div class="form-group">
                 <label>*Apellido paterno:</label>
-                <input type="text" class="form-control" name="first_last_name" required>
+                <input id="idAp" type="text" class="form-control" name="first_last_name" required>
               </div>
             </div>
 
             <div class="col">
               <div class="form-group">
                 <label>Apellido materno:</label>
-                <input type="text" class="form-control" name="second_last_name" required>
+                <input id="idAm" type="text" class="form-control" name="second_last_name">
               </div>
             </div>
           </div>
@@ -156,7 +158,7 @@
             <div class="col">
               <div class="form-group">
                 <label>*Domicilio:</label>
-                <input type="text" class="form-control" name="home_address" required>
+                <input id="idDomicilio" type="text" class="form-control" name="home_address" required>
               </div>
             </div>
           </div>
@@ -165,14 +167,14 @@
             <div class="col">
               <div class="form-group">
                 <label>*Correo electrónico:</label>
-                <input type="text" class="form-control" name="email" required>
+                <input id="idCorreo" type="text" class="form-control" name="email" required>
               </div>
             </div>
 
             <div class="col">
               <div class="form-group">
                 <label>*Teléfono:</label>
-                <input type="tel" class="form-control" name="phone" required>
+                <input id="idTel" type="tel" class="form-control" name="phone" required>
               </div>
             </div>
           </div>
@@ -180,7 +182,7 @@
           <div class="row">
             <div class="col">
               <div class="form-group">
-                <button type="button" class="btn btn-success" id="submit">Registrar</button>
+                <button type="button" class="btn btn-success" id="btnRegistrar">Registrar</button>
               </div>
             </div>
           </div>
@@ -193,8 +195,6 @@
   </div>
 
   <!-- TODO: Descargarlo en la carpeta componentes y enlazarlos -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"

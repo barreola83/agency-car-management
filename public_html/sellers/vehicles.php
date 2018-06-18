@@ -114,10 +114,22 @@
         <!-- All application's content goes here -->
         <div id="container" class="container-fluid">
           <h6>Filtro</h6>
+          <?php
+            require "funciones.php";
+            $conn=ConectarBD();
+            $queryModelos="CALL get_models();";
+            $resultModelos=$conn->query($queryModelos);
+          ?>
           <select class="form-control" id="selFiltro">
-            <option value="../../img/YARIS-HB_BLANCO.png" selected>Deportivo</option>
-            <option value="../../img/YARIS-HB_AZUL.png">Muzle</option>
-            <option value="../../img/YARIS-HB_GRIS.png">Camioneta</option>
+            <?php
+            if($conn->error){
+              die("Error en la consulta".$conn->error);
+            }
+            while($rowModelos=$resultModelos->fetch_assoc()){
+            ?>
+            <option selected><?php echo $rowModelos["model"]?></option>
+            <?php }
+            ?>
           </select>
           <br>
           <div class="container-fluid">
@@ -137,6 +149,25 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <?php
+                  /*$result=$conn->query("Select * from automobiles");
+                  if($conn->error){
+                    die("Error en la consulta".$conn->error);
+                  }
+                  while($row=$result->fetch_assoc()){
+                  ?>
+                  <tr>
+                    <td class="text-center"><?php echo $row["id"]?></td>
+                    <td class="text-center"><img id="img1" src="../../img/YARIS-HB_BLANCO.png" class="img-fluid" width="100" height="100"></td>
+										<td class="text-center"><?php echo $row["id"]?></td>
+                    <td class="text-center">
+                      <?php echo $row["name"]?> <?php echo $row["first_last_name"]?>>
+                    </td>
+										<td class="text-center"><?php echo $row["date_time"]?></td>
+										<td class="text-center"><?php echo $row["subject"]?></td>
+                  </tr>
+                  <?php }
+                  */?>
                   <tr class="clickable-row">
                     <th scope="row" class="text-center">1</th>
                     <td class="text-center">
@@ -650,5 +681,4 @@
     });
   </script>
 </body>
-
 </html>

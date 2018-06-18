@@ -1,15 +1,27 @@
 $(document).ready(function () {
-    /*
-    $("#btnModalVender").click(function(){
-        alert("Registrada exitosamente");
+    $("#btnRegistrar").click(function(){
+		$.post("insertarProspecto.php",
+		{
+            Tipo:$("#idTipo").val(),
+            RFC:$("#idRFC").val(),
+			Nombre:$("#idNombre").val(),
+			Ap:$("#idAp").val(),
+            Am:$("#idAm").val(),
+            Domicilio:$("#idDomicilio").val(),
+            Correo:$("#idCorreo").val(),
+            Tel:$("#idTel").val()},
+			function(data,status){
+				if(data=="OK"){
+                    alert("Registrado correctamente");
+                }
+		});
     });
-    $("#btnModalApartar").click(function(){
-        alert("Vehículo apartado exitosamente");
-    });
-    $("#btnModalSolicitar").click(function(){
-        alert("Solicitud realizada exitosamente exitosamente");
-    });
-    */
+    
+    $("#IdSearch").on("input",function(){
+		$.post("buscarProspecto.php",{Nombre:$("#IdSearch").val()},function(data,status){
+			$("#DivTabla").html(data);
+		});
+	});
 
     $("#btnBuscarVehiculo").click(function () {
         window.open("vehicles.html", "_self");
