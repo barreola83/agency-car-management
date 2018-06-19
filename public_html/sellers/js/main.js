@@ -84,8 +84,7 @@ function CancelarSolicitud(Obj,IdE) {
         return;
     $.post("cancelarSolicitud.php", { Id: IdE }, function (data, status) {
         if (data != "OK") { alert(data); return; }
-        row = Obj.parentNode.parentNode.rowIndex;
-        document.getElementById('requestsTable').deleteRow(row);
+        window.location.reload();
     });
 }
 

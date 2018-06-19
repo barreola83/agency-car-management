@@ -15,5 +15,5 @@ $conn->query("delete from requests where id=".test_input($_POST["Id"]));
 if($conn->error){
     die("Error al eliminar: ".$conn->error);
 }
-echo "Ok";
+echo "OK";
 ?>
