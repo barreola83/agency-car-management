@@ -139,17 +139,19 @@
                   <tr>
                     <td class="text-center"><?php echo $row["id"]?></td>
                     <td class="text-center"><?php echo $row["type"]?></td>
+                    <td class="text-center" hidden><?php echo $row["RFC"]?></td>
 										<td class="text-center">
-                      <?php echo $row["name"]?> <?php echo $row["first_last_name"]?> <?php echo $row["second_last_name"]?>
+                      <label><?php echo $row["name"]?></label> <label><?php echo $row["first_last_name"]?></label> <label><?php echo $row["second_last_name"]?></label>
                     </td>
+                    <td class="text-center" hidden><?php echo $row["home_address"]?></td>
 										<td class="text-center"><?php echo $row["email"]?></td>
                     <td class="text-center"><?php echo $row["phone"]?></td>
                     <td class="text-center">
                       <div class="form-group">
-                        <button class="btn btn-success" style="font-size:20px" title="Modificar" data-toggle="modal" data-target="#ModalModificar" onclick="setModalInformation('mod1', 'img1', 'ver1', 'sel1', 'pri1', 'can1')">
+                        <button class="btn btn-success" style="font-size:20px" title="Modificar" data-toggle="modal" data-target="#ModalModificar" onclick="loadEdit(this,<?php echo $row["id"] ?>)">
                           <i class="material-icons">update</i>
                         </button>
-                        <button class="btn btn-danger" style="font-size:20px" title="Eliminar" data-toggle="modal" data-target="#ModalEliminar">
+                        <button class="btn btn-danger" style="font-size:20px" title="Eliminar" data-toggle="modal" data-target="#ModalEliminar" onclick="loadDelete(this,<?php echo $row["id"] ?>)">
                           <i class="material-icons">delete_forever</i>
                         </button>
                       </div>
@@ -174,9 +176,21 @@
                   <img id="ModalVenderImage" class="img-fluid" style="float: left;">
                   <h5>Información</h5>
                   <hr>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label>Tipo:</label>
+                      <select class="form-control" name="type" id="ModalModificarTipo">
+                        <option value="PROSPECT" selected>Prospecto</option>
+                        <option value="CLIENT">Cliente</option>
+                      </select>
+                    </div>
+                  </div>
+
                   <div class="col">
                     <div class="form-group">
                       <label>RFC:</label>
+                      <input type="hidden" id="ModalModificarId">
                       <input class="form-control" id="ModalModificarRFC">
                     </div>
                   </div>
@@ -185,6 +199,20 @@
                     <div class="form-group">
                       <label>Nombre:</label>
                       <input class="form-control" id="ModalModificarNombre">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label>Apellido Paterno:</label>
+                      <input class="form-control" id="ModalModificarAp">
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label>Apellido Materno:</label>
+                      <input class="form-control" id="ModalModificarAm">
                     </div>
                   </div>
 
@@ -211,8 +239,8 @@
 
                 </div>
                 <div class="modal-footer">
-                  <button id="btnModalVender" type="button" class="btn btn-success" data-dismiss="modal">Modificar</button>
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                  <button id="btnModalModificar" type="button" class="btn btn-success">Modificar</button>
+                  <button id="btnCancelar" type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                 </div>
               </div>
             </div>
@@ -231,9 +259,21 @@
                   <img id="ModalVenderImage" class="img-fluid" style="float: left;">
                   <h5>Información</h5>
                   <hr>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label>Tipo:</label>
+                      <select class="form-control" name="type" id="ModalModificarTipo" readonly>
+                        <option value="PROSPECT" selected>Prospecto</option>
+                        <option value="CLIENT">Cliente</option>
+                      </select>
+                    </div>
+                  </div>
+
                   <div class="col">
                     <div class="form-group">
                       <label>RFC:</label>
+                      <input type="hidden" id="ModalEliminarId">
                       <input class="form-control" id="ModalEliminarRFC" readonly>
                     </div>
                   </div>
@@ -242,6 +282,20 @@
                     <div class="form-group">
                       <label>Nombre:</label>
                       <input class="form-control" id="ModalEliminarNombre" readonly>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label>Apellido Paterno:</label>
+                      <input class="form-control" id="ModalEliminarAp" readonly>
+                    </div>
+                  </div>
+
+                  <div class="col">
+                    <div class="form-group">
+                      <label>Apellido Materno:</label>
+                      <input class="form-control" id="ModalEliminarAm" readonly>
                     </div>
                   </div>
 
@@ -268,7 +322,7 @@
 
                 </div>
                 <div class="modal-footer">
-                  <button id="btnModalVender" type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
+                  <button id="btnModalEliminar" type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
                   <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
                 </div>
               </div>
