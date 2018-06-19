@@ -54,6 +54,12 @@ $(document).ready(function () {
 		$.post("buscarProspecto.php",{Nombre:$("#IdSearch").val()},function(data,status){
 			$("#DivTabla").html(data);
 		});
+    });
+    
+    $("#selFiltro").on("change",function(){
+		$.post("buscarVehiculo.php",{Modelo:$("#selFiltro").val()},function(data,status){
+			$("#stockTable").html(data);
+		});
 	});
 
     $("#btnBuscarVehiculo").click(function () {
@@ -84,8 +90,7 @@ function CancelarSolicitud(Obj,IdE) {
         return;
     $.post("cancelarSolicitud.php", { Id: IdE }, function (data, status) {
         if (data != "OK") { alert(data); return; }
-        row = Obj.parentNode.parentNode.rowIndex;
-        document.getElementById('requestsTable').deleteRow(row);
+        window.location.reload();
     });
 }
 

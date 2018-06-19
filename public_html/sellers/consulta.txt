@@ -1,0 +1,4 @@
+select distinct(automobiles.image_path), automobiles.id, sspecs.model, versions.version_name,
+       colors.color_name from automobiles inner join specs on automobiles.id_specs=specs.id
+	inner join versions on automobiles.id_version=versions.id inner join colors on 
+	automobiles.id_color=colors.id;

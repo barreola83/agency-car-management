@@ -124,27 +124,12 @@
                                     <th scope="col">Agencia</th>
                                     <th scope="col">Automóvil</th>
                                     <th scope="col">Versión</th>
+                                    <th scope="col">Color</th>
                                     <th scope="col">Stock status</th>
                                     <th scope="col">Cantidad</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr class="clickable-row">
-                                    <th scope="row">1</th>
-                                    <td>OZ Toyota</td>
-                                    <td>Camry 2018</td>
-                                    <td>SE Plus</td>
-                                    <td style="color:green">In stock</td>
-                                    <td id="stockLeft">21</td>
-                                </tr>
-                                <tr class="clickable-row">
-                                    <th scope="row">2</th>
-                                    <td>Dalton Toyota</td>
-                                    <td>Rav4 2018</td>
-                                    <td>LE CVT</td>
-                                    <td style="color:red">Out of stock</td>
-                                    <td id="stockLeft">0</td>
-                                </tr>
+                            <tbody id="stock-body">
                             </tbody>
                         </table>
                     </div>
@@ -158,50 +143,52 @@
                                 <h5 style="margin: 0 auto;" class="modal-title">Actualizar stock</h5>
                             </div>
                             <div id="editStockModalBody" class="modal-body">
-                                <div class="row">
-                                    <div class="col ">
-                                        <div class="form-group">
-                                            <label>Automóvil</label>
-                                            <input type="text" class="form-control" id="automobileName" readonly>
+                                <form class="needs-validation" id="updateStockForm" novalidate>
+                                    <div class="row">
+                                        <div class="col ">
+                                            <div class="form-group">
+                                                <label>Automóvil</label>
+                                                <input type="text" class="form-control" id="automobileName" readonly>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col ">
-                                        <div class="form-group">
-                                            <label>Versión</label>
-                                            <input type="number" class="form-control" id="id_automobile" readonly>
+                                    <div class="row">
+                                        <div class="col ">
+                                            <div class="form-group">
+                                                <label>Versión</label>
+                                                <input type="number" class="form-control" id="id_automobile" readonly>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col ">
-                                        <div class="form-group">
-                                            <label for="sel1">Color:</label>
-                                            <select class="form-control" id="selType">
-                                                <div id="colorOptions">
-                                                    <option>Rojo</option>
-                                                    <option>Azul</option>
-                                                    <option>Verde</option>
-                                                </div>
-                                            </select>
+                                    <div class="row">
+                                        <div class="col ">
+                                            <div class="form-group">
+                                                <label for="sel1">Color:</label>
+                                                <select class="form-control" id="selType">
+                                                    <div id="colorOptions">
+                                                    </div>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col ">
-                                        <div class="form-group">
-                                            <label>
-                                                Cantidad
-                                            </label>
-                                            <input type="text" class="form-control" id="stockQty">
+                                    <div class="row">
+                                        <div class="col ">
+                                            <div class="form-group">
+                                                <label>
+                                                    Cantidad
+                                                </label>
+                                                <input type="text" class="form-control" id="stockQty" required>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Debe ingresar una cantida.
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button id="cancelButton" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                <button id="acceptButton" type="button" class="btn btn-primary">Guardar</button>
+                                    <div class="form-group pull-right">
+                                        <button id="cancelButton" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-success">Guardar</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -236,7 +223,8 @@
                                             <select class="form-control" id="model" aria-describedby="modelTextHelp" required>
                                             </select>
                                             <small id="modelTextHelp" class="text-muted">
-                                                <span class="text-danger">*</span> IMPORTANTE: Debe seleccionar un modelo para poder desplegar las versiones y colores.
+                                                <span class="text-danger">*</span> IMPORTANTE: Debe seleccionar un modelo para poder desplegar las
+                                                versiones y colores.
                                             </small>
                                             <div class="invalid-feedback">
                                                 Por favor seleccione un modelo.
