@@ -13,6 +13,7 @@ if($conn->error){
         <th scope="col" class="text-center">Imagen</th>
         <th scope="col" class="text-center">Modelo</th>
         <th scope="col" class="text-center">Versión</th>
+        <th scope="col" class="text-center">Cantidad</th>
         <th scope="col" class="text-center">Acciones</th>
     </tr>
 </thead>
@@ -25,6 +26,7 @@ if($conn->error){
         <td class="text-center"><img id="img1" src="../../<?php echo $row["image_path"]?>" class="img-fluid" width="100" height="100"></td>
         <td class="text-center"><?php echo $row["model"]?></td>
         <td class="text-center"><?php echo $row["version_name"]?></td>
+        <td class="text-center"><?php echo ObtenerCantidad($row["model"],$row["id_version"],"8");?></td>
         <td class="text-center">
             <div class="form-group">
                 <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalVender('<?php echo $row["model"]?>','<?php echo $row["version_name"]?>')">

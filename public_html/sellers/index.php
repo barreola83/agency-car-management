@@ -36,7 +36,7 @@
         <div class="sidebar-header">
           <img src="../../img/user-photo.png" class="user-photo">
           <p class="username">
-            Carlos Herrera
+            Damaso Benicio Rodriguez
             <small>Vendedor</small>
           </p>
         </div>

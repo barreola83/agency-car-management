@@ -128,10 +128,11 @@ function setModalVender(model,version)
     });
 }
 
-function setModalSolicitar(Obj,IdE)
+function setModalSolicitar(model,version)
 {
     $.post("buscarInfoVehiculo.php",{Modelo:model,Version:version},function(data,status){
+        $("#ModalSolicitarModelo").html(model);
         $("#ModalSolicitarVersion").val(version);
-        $("#ModalSolicitarColor").val($_GET["color"]);
+        $("#ModalSolicitarId").val(data);
     });
 }
