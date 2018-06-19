@@ -3,6 +3,7 @@ $(document).ready(function () {
     let username = localStorage.getItem("username");
     let role = localStorage.getItem("role");
     let customErrorMessage = "Ha ocurrido un error en el servidor, intente refrescar la página presionando F5.";
+    let objectStock;
 
     $(".username").text(username);
     $("p.username > small").text(role);
@@ -36,7 +37,41 @@ $(document).ready(function () {
         });
     });
 
-    $(function(){
+    $(function () {
+        $.ajax({
+            url: "http://localhost/retrieve_global_stock_info.php",
+            dataType: 'json',
+            type: "POST",
+            crossDomain: true,
+            success: function (response) {
+                //console.log(response);
+                let html;
+                $.each(response, function (index, value) {
+                    let availability;
+                    if (value.quantity == 0) {
+                        availability = '<td style="color:red">No disponible</td>';
+                    } else {
+                        availability = '<td style="color:green">Disponible</td>';
+                    }
+                    html += '<tr class="clickable-row">'
+                        + '<th scope="row">' + value.id_node + '</th>'
+                        + '<td>' + value.name + '</td>'
+                        + '<td>' + value.model + '</td>'
+                        + '<td id=' + value.id_version + '>' + value.version + '</td>'
+                        + '<td id=' + value.id_color + '>' + value.color + '</td>'
+                        + availability
+                        + '<td id="stockLeft">' + value.quantity + '</td>'
+                        + '</tr>';
+                });
+                $("#stock-body").html(html);
+            },
+            error: function (jqXhr, textStatus, errorMessage) {
+                console.log('Error: ' + errorMessage);
+            }
+        });
+    });
+
+    $(function () {
         retrieveStates();
     })
 
@@ -62,9 +97,12 @@ $(document).ready(function () {
     });
 
     $("#stockTable").on("dblclick", "tr", function () {
-        //console.log($(this).find("th:first").text());
         $("#editStockModal").modal("show");
     });
+
+    $("#editStockModal").on("show.bs.modal", function (e) {
+
+    })
 
     $('#addCarLotModal').on('show.bs.modal', function (e) {
         retrieveModel();
@@ -79,7 +117,7 @@ $(document).ready(function () {
             type: "POST",
             crossDomain: true,
             success: function (response) {
-                //console.log(response);
+                console.log(response);
                 if (response == null || response == 'undefined') {
                     $("#editAgencyModal").html(customErrorMessage);
                 } else {
@@ -92,7 +130,7 @@ $(document).ready(function () {
                     $("#selState option[value='" + response.id_state + "']").prop("selected", true);
                     $("#selTown").val(response["0"].id_town);
                     $("#selType").val((response["0"].type).replace("_", " "));
-                    $("#phoneNumber").val((response["0"].phone).replace(" ", ""));
+                    $("#phoneNumber").val((response["0"].phone).replace(/^\s+|\s+$/gm, ''));
                     $("#website").val(response["0"].website);
 
                 }
@@ -105,10 +143,13 @@ $(document).ready(function () {
     });
 
     $("#model").change(function () {
-        //console.log("Se envió: " + $("#model option:selected").text());
+        console.log("Se envió: " + $("#model option:selected").text());
         retrieveVersion($("#model option:selected").text());
-        retrieveColors($("#model option:selected").text());
+        retrieveColors($("#model option:selected").val());
+        console.log($("#version option:selected").val());
+        console.log($("#color option:selected").val());
         getAmountAvailable($("#model option:selected").text(), $("#version option:selected").attr("id"), $("#color option:selected").attr("id"));
+
     });
 
     $("#selState").change(function () {
@@ -242,7 +283,7 @@ $(document).ready(function () {
         });
     }
 
-    $("#registerForm").submit(function () {
+    $("#registerForm").submit(function (event) {
         event.preventDefault();
 
         if ($("#registerForm")[0].checkValidity() === false) {
@@ -303,7 +344,7 @@ $(document).ready(function () {
         $("#registerForm").addClass('was-validated');
     });
 
-    $("#addCarLotForm").submit(function () {
+    $("#addCarLotForm").submit(function (event) {
         event.preventDefault();
 
         if ($("#addCarLotForm")[0].checkValidity() === false) {
@@ -359,7 +400,7 @@ $(document).ready(function () {
         $("#addCarLotForm").addClass('was-validated');
     });
 
-    $("#modifyForm").submit(function () {
+    $("#modifyForm").submit(function (event) {
         event.preventDefault();
 
         if ($("#modifyForm")[0].checkValidity() === false) {
@@ -413,6 +454,45 @@ $(document).ready(function () {
         }
 
         $("#modifyForm").addClass('was-validated');
+    });
+
+    $("#updateStockForm").submit(function (event) {
+        event.preventDefault();
+
+        if ($("#updateStockForm")[0].checkValidity() === false) {
+            event.stopPropagation();
+            console.log("NO");
+        } else {
+            console.log("Submitted properly");
+
+            $.ajax({
+                data: {
+                    "id_node": ["0"].childNodes["0"].textContent,
+                    "model": ["0"].childNodes[2].textContent,
+                    "id_version": ["0"].childNodes[3].id,
+                    "id_color": ["0"].childNodes[4].id,
+                    "n_vehicles": $("#stockQty").val()
+                },
+                url: "http://localhost/add_car_lot.php",
+                type: 'POST',
+                crossDomain: true,
+                success: function (response) {
+                    console.log(response);
+                    if (response == "Success") {
+                        //Do something
+                    } else {
+                        //Do something
+                    }
+                },
+                error: function (jqXhr, textStatus, errorMessage) {
+                    console.log('Error: ' + errorMessage);
+                }
+            });
+
+
+        }
+
+        $("#updateStockForm").addClass('was-validated');
     });
 
     function retrieveTownsPerState(id) {
