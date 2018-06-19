@@ -97,11 +97,18 @@ $(document).ready(function () {
     });
 
     $("#stockTable").on("dblclick", "tr", function () {
+        objectStock = $(this);
         $("#editStockModal").modal("show");
     });
 
     $("#editStockModal").on("show.bs.modal", function (e) {
-
+        //console.log(objectStock);
+        //$("#automobileName").val(objectStock["0"].childNodes["0"].textContent);
+        $("#automobileName").val(objectStock["0"].childNodes[2].textContent);
+        $("#version").val(objectStock["0"].childNodes[3].textContent);
+        let html = "<option>" + objectStock["0"].childNodes[4].textContent + "</option>";
+        $("#selType").html(html);
+        $("#stockQty").val(objectStock["0"].childNodes[6].textContent);
     })
 
     $('#addCarLotModal').on('show.bs.modal', function (e) {
@@ -140,6 +147,10 @@ $(document).ready(function () {
             }
         });
 
+    });
+
+    $("#editAgencyModal, #addCarLotModal, #editStockModal").on('hidden.bs.modal', function (event) {
+        $("#editAgencyModal #addCarLotModal #editStockModal").modal('dispose');
     });
 
     $("#model").change(function () {
@@ -461,23 +472,23 @@ $(document).ready(function () {
 
         if ($("#updateStockForm")[0].checkValidity() === false) {
             event.stopPropagation();
-            console.log("NO");
+            //console.log("NO");
         } else {
-            console.log("Submitted properly");
+            //console.log("Submitted properly");
 
             $.ajax({
                 data: {
-                    "id_node": ["0"].childNodes["0"].textContent,
-                    "model": ["0"].childNodes[2].textContent,
-                    "id_version": ["0"].childNodes[3].id,
-                    "id_color": ["0"].childNodes[4].id,
+                    "id_node": objectStock["0"].childNodes["0"].textContent,
+                    "model": objectStock["0"].childNodes[2].textContent,
+                    "id_version": objectStock["0"].childNodes[3].id,
+                    "id_color": objectStock["0"].childNodes[4].id,
                     "n_vehicles": $("#stockQty").val()
                 },
                 url: "http://localhost/add_car_lot.php",
                 type: 'POST',
                 crossDomain: true,
                 success: function (response) {
-                    console.log(response);
+                    //console.log(response);
                     if (response == "Success") {
                         //Do something
                     } else {
