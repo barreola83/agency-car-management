@@ -162,13 +162,13 @@
                     <td class="text-center"><?php echo ObtenerCantidad($row["model"],$row["id_version"],"8");?></td>
                     <td class="text-center">
                       <div class="form-group">
-                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalVender('<?php echo $row["model"]?>','<?php echo $row["version_name"]?>')">
+                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalVender('<?php echo $row["model"]?>','<?php echo $row["version_name"]?>','<?php echo $row["image_path"]?>')">
                           <i class="material-icons">add_shopping_cart</i>
                         </button>
                         <button class="btn btn-info" style="font-size:20px" title="Apartar" data-toggle="modal" data-target="#ModalApartar" onclick="setModalApartar('<?php echo $row["model"]?>','<?php echo $row["version_name"]?>')" disabled>
                           <i class="material-icons">book</i>
                         </button>
-                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar" onclick="setModalSolicitar('<?php echo $row["model"]?>','<?php echo $row["version_name"]?>')">
+                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar" onclick="setModalSolicitar('<?php echo $row["model"]?>','<?php echo $row["version_name"]?>','<?php echo $row["image_path"]?>')">
                           <i class="material-icons">compare_arrows</i>
                         </button>
                       </div>
@@ -206,12 +206,7 @@
                   <div class="col">
                     <div class="form-group">
                       <label>Color:</label>
-                      <select class="form-control" id="ModalVenderColor">
-                        <option value="Negro">Negro</option>
-                        <option value="Azul">Azul</option>
-                        <option value="Blanco">Blanco</option>
-                        <option value="Rojo">Rojo</option>
-                      </select>
+                      <input class="form-control" id="ModalVenderColor" readonly>
                     </div>
                   </div>
 
@@ -342,13 +337,6 @@
                     </div>
                   </div>
 
-                  <div class="col">
-                    <div class="form-group">
-                      <label>Precio:</label>
-                      <input class="form-control" id="ModalSolicitarPrice" readonly>
-                    </div>
-                  </div>
-
                   <h5>Agencias</h5>
                   <hr>
                   <div class="col">
@@ -356,37 +344,8 @@
                       <label>*Agencias:</label>
                       <select class="form-control" id="ModalSolicitarAgencies" onclick="getAgencyInformation('ModalSolicitarAgencies')">
                         <option value="age0" selected>--</option>
-                        <option value="age1">Oz Toyota Colima</option>
                         <option value="age2">Dalton Toyota López Mateos Guadalajara</option>
                       </select>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="form-group">
-                      <label>Domicilio:</label>
-                      <input type="text" class="form-control" id="ModalSolicitarAddress" readonly>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="form-group">
-                      <label>Ciudad:</label>
-                      <input type="text" class="form-control" id="ModalSolicitarTown" readonly>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="form-group">
-                      <label>Estado:</label>
-                      <input type="text" class="form-control" id="ModalSolicitarState" readonly>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="form-group">
-                      <label>Teléfono:</label>
-                      <input type="text" class="form-control" id="ModalSolicitarPhone" readonly>
                     </div>
                   </div>
 
