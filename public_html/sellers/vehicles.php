@@ -160,14 +160,13 @@
                     <td class="text-center"><?php echo $row["version_name"]?></td>
                     <td class="text-center">
                       <div class="form-group">
-                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalInformation('mod1', 'img1', 'ver1', 'sel1', 'pri1', 'can1')">
+                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalVender('<?php echo $row["model"]?>','<?php echo $row["version_name"]?>')">
                           <i class="material-icons">add_shopping_cart</i>
                         </button>
-                        <button class="btn btn-info" style="font-size:20px" title="Apartar" data-toggle="modal" data-target="#ModalApartar">
+                        <button class="btn btn-info" style="font-size:20px" title="Apartar" data-toggle="modal" data-target="#ModalApartar" onclick="setModalApartar('<?php echo $row["model"]?>','<?php echo $row["version_name"]?>')" disabled>
                           <i class="material-icons">book</i>
                         </button>
-                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar"
-                          disabled>
+                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar" onclick="setModalSolicitar('<?php echo $row["model"]?>','<?php echo $row["version_name"]?>')">
                           <i class="material-icons">compare_arrows</i>
                         </button>
                       </div>
@@ -192,10 +191,12 @@
                   <h3 id="ModalVenderModel"></h3>
                   <img id="ModalVenderImage" class="img-fluid" style="float: left;">
                   <h5>Información</h5>
+                  <h3 id="ModalVenderModelo"></h3>
                   <hr>
                   <div class="col">
                     <div class="form-group">
                       <label>Versión:</label>
+                      <input type="hidden" id="ModalVenderId">
                       <input class="form-control" id="ModalVenderVersion" readonly>
                     </div>
                   </div>
@@ -203,14 +204,12 @@
                   <div class="col">
                     <div class="form-group">
                       <label>Color:</label>
-                      <input class="form-control" id="ModalVenderColor" readonly>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="form-group">
-                      <label>Precio:</label>
-                      <input class="form-control" id="ModalVenderPrice" readonly>
+                      <select class="form-control" id="ModalVenderColor">
+                        <option value="Negro">Negro</option>
+                        <option value="Azul">Azul</option>
+                        <option value="Blanco">Blanco</option>
+                        <option value="Rojo">Rojo</option>
+                      </select>
                     </div>
                   </div>
 
@@ -219,7 +218,7 @@
                   <div class="col">
                     <div class="form-group">
                       <label>*RFC:</label>
-                      <input id="ModalVenderRFC" class="form-control">
+                      <input id="ModalVenderRFC" class="form-control" maxlength="13">
                     </div>
                   </div>
 
@@ -230,23 +229,9 @@
                     </div>
                   </div>
 
-                  <div class="col">
-                    <div class="form-group">
-                      <label>Correo electrónico:</label>
-                      <input id="ModalVenderEmail" class="form-control" readonly>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="form-group">
-                      <label>Teléfono:</label>
-                      <input id="ModalVenderPhone" class="form-control" readonly>
-                    </div>
-                  </div>
-
                 </div>
                 <div class="modal-footer">
-                  <button id="btnModalVender" type="button" class="btn btn-success" data-dismiss="modal">Registrar</button>
+                  <button id="btnModalVender" type="button" class="btn btn-success">Registrar</button>
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                 </div>
               </div>

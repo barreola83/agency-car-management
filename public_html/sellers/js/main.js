@@ -66,21 +66,19 @@ $(document).ready(function () {
         window.open("vehicles.html", "_self");
     });
 
+    $("#ModalVenderRFC").on("input",function(){
+		$.post("buscarProspectoE.php",{RFC:$("#ModalVenderRFC").val()},function(data,status){
+			$("#ModalVenderName").val(data);
+		});
+    });
+
     $("#btnModalVender").click(function(){
-        $.post("vender.php",{Id:Id},function(data,status){
-            if (data != "OK") { alert(data); return; }
-        });
-    });
-
-    $("#btnModalApartar").click(function(){
-        $.post("vender.php",{Id:Id},function(data,status){
-            if (data != "OK") { alert(data); return; }
-        });
-    });
-
-    $("#btnModalSolicitar").click(function(){
-        $.post("vender.php",{Id:Id},function(data,status){
-            if (data != "OK") { alert(data); return; }
+        $.post("vender.php",{
+            Id:$("#ModalVenderId").val(),Modelo:$("#ModalVenderModelo").html(),RFC:$("#ModalVenderRFC").val()
+        },
+            function(data,status){
+                if (data != "OK") { alert(data); return; }
+                window.location.reload();
         });
     });
 });
@@ -119,4 +117,21 @@ function loadDelete(Obj,IdE)
 	$("#ModalEliminarDomicilio").val(Obj.parentNode.parentNode.parentNode.childNodes[9].innerText);
     $("#ModalEliminarCorreo").val(Obj.parentNode.parentNode.parentNode.childNodes[11].innerText);
     $("#ModalEliminarTel").val(Obj.parentNode.parentNode.parentNode.childNodes[13].innerText);
+}
+
+function setModalVender(model,version)
+{
+    $.post("buscarInfoVehiculo.php",{Modelo:model,Version:version},function(data,status){
+        $("#ModalVenderModelo").html(model);
+        $("#ModalVenderVersion").val(version);
+        $("#ModalVenderId").val(data);
+    });
+}
+
+function setModalSolicitar(Obj,IdE)
+{
+    $.post("buscarInfoVehiculo.php",{Modelo:model,Version:version},function(data,status){
+        $("#ModalSolicitarVersion").val(version);
+        $("#ModalSolicitarColor").val($_GET["color"]);
+    });
 }
