@@ -28,8 +28,9 @@ $(document).ready(function () {
                     $("#login").html("Accediendo...");
                 },
                 success: function (response) {
-                    console.log(response);
+                    //console.log(response);
                     if (response != "undefined" || response != "") {
+                        localStorage.setItem("user", response);
                         switch (response["0"].role) {
                             case "Agency Manager":
                                 window.location.replace("../agency/index.html");
