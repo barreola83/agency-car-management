@@ -18,3 +18,7 @@ tr:hover{
 a {
     cursor: pointer;
 }
+
+li > a:hover {
+    text-decoration: none;
+}

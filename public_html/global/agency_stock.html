@@ -107,6 +107,9 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item active" aria-current="page">Actualizar stock en agencia</li>
+                        <li class="breadcrumb-item pull-right" aria-current="page">
+                            <a id="carLot" class="btn-sm btn-light">Añadir lote</a>
+                        </li>
                     </ol>
                 </nav>
 
@@ -154,12 +157,12 @@
                             <div class="modal-header text-center">
                                 <h5 style="margin: 0 auto;" class="modal-title">Actualizar stock</h5>
                             </div>
-                            <div class="modal-body">
+                            <div id="editStockModalBody" class="modal-body">
                                 <div class="row">
                                     <div class="col ">
                                         <div class="form-group">
                                             <label>Automóvil</label>
-                                            <input type="text" class="form-control" id="automobileName" readonly="readonly">
+                                            <input type="text" class="form-control" id="automobileName" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -167,7 +170,7 @@
                                     <div class="col ">
                                         <div class="form-group">
                                             <label>Versión</label>
-                                            <input type="number" class="form-control" id="id_automobile" readonly="readonly">
+                                            <input type="number" class="form-control" id="id_automobile" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -203,6 +206,97 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Add car lot modal goes here -->
+                <div class="modal fade" id="addCarLotModal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header text-center">
+                                <h5 style="margin: 0 auto;" class="modal-title">Agregar lote de autos</h5>
+                            </div>
+                            <div id="addCarModalBody" class="modal-body">
+                                <form class="needs-validation" id="addCarLotForm" novalidate>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>
+                                                Agencia:
+                                            </label>
+                                            <select class="form-control" id="nodes" required>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Por favor seleccione una agencia.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>
+                                                Modelo:
+                                            </label>
+                                            <select class="form-control" id="model" aria-describedby="modelTextHelp" required>
+                                            </select>
+                                            <small id="modelTextHelp" class="text-muted">
+                                                <span class="text-danger">*</span> IMPORTANTE: Debe seleccionar un modelo para poder desplegar las versiones y colores.
+                                            </small>
+                                            <div class="invalid-feedback">
+                                                Por favor seleccione un modelo.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>
+                                                Versión:
+                                            </label>
+                                            <select class="form-control" id="version" required>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Por favor seleccione una versión.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>
+                                                Color:
+                                            </label>
+                                            <select class="form-control" id="color" required>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Por favor seleccione un color.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>
+                                                Vehículos disponibles:
+                                            </label>
+                                            <input type="text" class="form-control" id="amount_available" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label>
+                                                <span class="text-danger">*</span> Cantidad a añadir:
+                                            </label>
+                                            <input type="number" class="form-control" id="quantity" required>
+                                            <div class="invalid-feedback">
+                                                Por favor ingrese una cantidad.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group pull-right">
+                                        <button id="cancelAddCarLot" type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-success">Aceptar</button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of car lot modal -->
                 <!-- End of modal content -->
 
 
@@ -214,14 +308,13 @@
 
 
     <!-- TODO: Descargarlo en la carpeta componentes y enlazarlos -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
 
     <!-- Archivos de JavaScript locales -->
     <script src="../global/global.js"></script>
