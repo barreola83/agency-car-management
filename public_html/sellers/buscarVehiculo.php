@@ -27,7 +27,7 @@ if($conn->error){
         <td class="text-center"><?php echo $row["version_name"]?></td>
         <td class="text-center">
             <div class="form-group">
-                <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalInformation('mod1', 'img1', 'ver1', 'sel1', 'pri1', 'can1')">
+                <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalVender('<?php echo $row["model"]?>','<?php echo $row["version_name"]?>')">
                     <i class="material-icons">add_shopping_cart</i>
                 </button>
                 <button class="btn btn-info" style="font-size:20px" title="Apartar" data-toggle="modal" data-target="#ModalApartar">
