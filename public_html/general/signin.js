@@ -33,7 +33,7 @@ $(document).ready(function () {
                         localStorage.setItem("user", response);
                         switch (response["0"].role) {
                             case "Agency Manager":
-                                window.location.replace("../agency/index.html");
+                                window.location.replace("../agency/index.php");
                                 localStorage.setItem("username", response["0"].name);
                                 localStorage.setItem("role", response["0"].role);
                                 break;
