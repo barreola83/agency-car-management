@@ -127,8 +127,8 @@
             }
             while($rowModelos=$resultModelos->fetch_assoc()){
             ?>
-            <option selected><?php echo $rowModelos["model"]?></option>
-            <?php }
+            <option><?php echo $rowModelos["model"]?></option>
+            <?php } $conn->close();
             ?>
           </select>
           <br>
@@ -141,55 +141,23 @@
                     <th scope="col" class="text-center">Imagen</th>
                     <th scope="col" class="text-center">Modelo</th>
                     <th scope="col" class="text-center">Versión</th>
-                    <th scope="col" class="text-center">Precio</th>
-                    <th scope="col" class="text-center">Colores</th>
-                    <th scope="col" class="text-center">Inventario</th>
-                    <th scope="col" class="text-center">Cantidad</th>
                     <th scope="col" class="text-center">Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
-                  /*$result=$conn->query("Select * from automobiles");
+                  $conn=ConectarBD();
+                  $result=$conn->query("select DISTINCT(automobiles.id_version),automobiles.image_path, specs.model,versions.version_name from automobiles INNER JOIN specs ON specs.model='Yaris HB' INNER JOIN versions ON automobiles.id_version=versions.id");
                   if($conn->error){
                     die("Error en la consulta".$conn->error);
                   }
                   while($row=$result->fetch_assoc()){
                   ?>
                   <tr>
-                    <td class="text-center"><?php echo $row["id"]?></td>
-                    <td class="text-center"><img id="img1" src="../../img/YARIS-HB_BLANCO.png" class="img-fluid" width="100" height="100"></td>
-										<td class="text-center"><?php echo $row["id"]?></td>
-                    <td class="text-center">
-                      <?php echo $row["name"]?> <?php echo $row["first_last_name"]?>>
-                    </td>
-										<td class="text-center"><?php echo $row["date_time"]?></td>
-										<td class="text-center"><?php echo $row["subject"]?></td>
-                  </tr>
-                  <?php }
-                  */?>
-                  <tr class="clickable-row">
-                    <th scope="row" class="text-center">1</th>
-                    <td class="text-center">
-                      <img id="img1" src="../../img/YARIS-HB_BLANCO.png" class="img-fluid" width="100" height="100">
-                    </td>
-                    <td class="text-center" id="mod1">Yaris HB</td>
-                    <td class="text-center" id="ver1">Core CVT</td>
-                    <td class="text-center" id="pri1">$229,900.00</td>
-                    <td class="text-center">
-                      <select class="form-control" id="sel1" onclick="changeImage('img1', 'sel1')">
-                        <option value="../../img/YARIS-HB_BLANCO.png" selected>Blanco</option>
-                        <option value="../../img/YARIS-HB_AZUL.png">Azul</option>
-                        <option value="../../img/YARIS-HB_GRIS.png">Gris</option>
-                        <option value="../../img/YARIS-HB_NARANJA.png">Naranja</option>
-                        <option value="../../img/YARIS-HB_NEGRO.png">Negro</option>
-                        <option value="../../img/YARIS-HB_PLATA.png">Plata</option>
-                        <option value="../../img/YARIS-HB_ROJO.png">Rojo</option>
-                        <option value="../../img/YARIS-HB_VERDE.png">Verde</option>
-                      </select>
-                    </td>
-                    <td style="color:green" class="text-center">Disponible</td>
-                    <td class="text-center" id="can1">20</td>
+                    <td class="text-center"><?php echo $row["id_version"]?></td>
+                    <td class="text-center"><img id="img1" src="../../<?php echo $row["image_path"]?>" class="img-fluid" width="100" height="100"></td>
+                   	<td class="text-center"><?php echo $row["model"]?></td>
+                    <td class="text-center"><?php echo $row["version_name"]?></td>
                     <td class="text-center">
                       <div class="form-group">
                         <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalInformation('mod1', 'img1', 'ver1', 'sel1', 'pri1', 'can1')">
@@ -205,152 +173,8 @@
                       </div>
                     </td>
                   </tr>
-
-                  <tr class="clickable-row">
-                    <th scope="row" class="text-center">2</th>
-                    <td class="text-center">
-                      <img id="img2" src="../../img/COROLLA_BLANCO.png" class="img-fluid" width="100" height="100">
-                    </td>
-                    <td class="text-center" id="mod2">Corolla</td>
-                    <td class="text-center" id="ver2">Base MT</td>
-                    <td class="text-center" id="pri2">$288,400.00</td>
-                    <td class="text-center">
-                      <select class="form-control" id="sel2" onclick="changeImage('img2', 'sel2')">
-                        <option value="../../img/COROLLA_BLANCO.png" selected>Blanco</option>
-                        <option value="../../img/COROLLA_BRONCE.png">Bronce</option>
-                        <option value="../../img/COROLLA_NEGRO.png">Negro</option>
-                        <option value="../../img/COROLLA_PLATA.png">Plata</option>
-                        <option value="../../img/COROLLA_ROJO.png">Rojo</option>
-                      </select>
-                    </td>
-                    <td style="color:green" class="text-center">Disponible</td>
-                    <td class="text-center" id="can2">10</td>
-                    <td class="text-center">
-                      <div class="form-group">
-                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalInformation('mod2', 'img2', 'ver2', 'sel2', 'pri2', 'can2')">
-                          <i class="material-icons">add_shopping_cart</i>
-                        </button>
-                        <button class="btn btn-info" style="font-size:20px" title="Apartar" data-toggle="modal" data-target="#ModalApartar">
-                          <i class="material-icons">book</i>
-                        </button>
-                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar"
-                          disabled>
-                          <i class="material-icons">compare_arrows</i>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr class="clickable-row">
-                    <th scope="row" class="text-center">3</th>
-                    <td class="text-center">
-                      <img id="img3" src="../../img/HIGHLANDER_BLANCO-PERLADO.png" class="img-fluid" width="100" height="100">
-                    </td>
-                    <td class="text-center" id="mod3">Highlander</td>
-                    <td class="text-center" id="ver3">LE</td>
-                    <td class="text-center" id="pri3">$565,000.00</td>
-                    <td class="text-center">
-                      <select class="form-control" id="sel3" onclick="changeImage('img3', 'sel3')">
-                        <option value="../../img/HIGHLANDER_BLANCO-PERLADO.png" selected>Blanco perla</option>
-                        <option value="../../img/HIGHLANDER_BRONCE.png">Bronce</option>
-                        <option value="../../img/HIGHLANDER_JADE.png">Jade</option>
-                        <option value="../../img/HIGHLANDER_NEGRO.png">Negro</option>
-                        <option value="../../img/HIGHLANDER_PLATA.png">Plata</option>
-                        <option value="../../img/HIGHLANDER_ROJO.png">Rojo</option>
-                      </select>
-                    </td>
-                    <td style="color:green" class="text-center">Disponible</td>
-                    <td class="text-center" id="can3">5</td>
-                    <td class="text-center">
-                      <div class="form-group">
-                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalInformation('mod3', 'img3', 'ver3', 'sel3', 'pri3', 'can3')">
-                          <i class="material-icons">add_shopping_cart</i>
-                        </button>
-                        <button class="btn btn-info" style="font-size:20px" title="Apartar" data-toggle="modal" data-target="#ModalApartar">
-                          <i class="material-icons">book</i>
-                        </button>
-                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar"
-                          disabled>
-                          <i class="material-icons">compare_arrows</i>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr class="clickable-row">
-                    <th scope="row" class="text-center">4</th>
-                    <td class="text-center">
-                      <img id="img4" src="../../img/RAV4_BLANCO.png" class="img-fluid" width="100" height="100">
-                    </td>
-                    <td class="text-center" id="mod4">RAV4</td>
-                    <td class="text-center" id="ver4">LE</td>
-                    <td class="text-center" id="pri4">$385,000.00</td>
-                    <td class="text-center">
-                      <select class="form-control" id="sel4" onclick="changeImage('img4', 'sel4')">
-                        <option value="../../img/RAV4_BLANCO.png" selected>Blanco</option>
-                        <option value="../../img/RAV4_BLANCO-PERLADO.png">Blanco perla</option>
-                        <option value="../../img/RAV4_GRIS-OSCURO.png">Gris oscuro</option>
-                        <option value="../../img/RAV4_MORADO.png">Morado</option>
-                        <option value="../../img/RAV4_NEGRO.png">Negro</option>
-                        <option value="../../img/RAV4_PLATA.png">Plata</option>
-                        <option value="../../img/RAV4_ROJO.png">Rojo</option>
-                      </select>
-                    </td>
-                    <td style="color: red" class="text-center">No disponible</td>
-                    <td class="text-center" id="can4">0</td>
-                    <td class="text-center">
-                      <div class="form-group">
-                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalInformation('mod4', 'img4', 'ver4', 'sel4', 'pri4', 'can4')"
-                          disabled>
-                          <i class="material-icons">add_shopping_cart</i>
-                        </button>
-                        <button class="btn btn-info" style="font-size:20px" title="Apartar" data-toggle="modal" data-target="#ModalApartar" disabled>
-                          <i class="material-icons">book</i>
-                        </button>
-                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar"
-                          onclick="setModalInformationForRequests('mod4', 'img4', 'ver4', 'sel4', 'pri4', 'can4')">
-                          <i class="material-icons">compare_arrows</i>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-
-                  <tr class="clickable-row">
-                    <th scope="row" class="text-center">5</th>
-                    <td class="text-center">
-                      <img id="img5" src="../../img/TACOMA_BLANCO.png" class="img-fluid" width="100" height="100">
-                    </td>
-                    <td class="text-center" id="mod5">Tacoma</td>
-                    <td class="text-center" id="ver5">Sport 4x2</td>
-                    <td class="text-center" id="pri5">$596,500.00</td>
-                    <td class="text-center">
-                      <select class="form-control" id="sel5" onclick="changeImage('img5', 'sel5')">
-                        <option value="../../img/TACOMA_BLANCO.png" selected>Blanco</option>
-                        <option value="../../img/TACOMA_AZUL.png">Azul</option>
-                        <option value="../../img/TACOMA_GRIS.png">Gris</option>
-                        <option value="../../img/TACOMA_NARANJA.png">Naranja</option>
-                        <option value="../../img/TACOMA_NEGRO.png">Negro</option>
-                        <option value="../../img/TACOMA_PLATA.png">Plata</option>
-                        <option value="../../img/TACOMA_ROJO.png">Rojo</option>
-                      </select>
-                    </td>
-                    <td style="color:green" class="text-center">Disponible</td>
-                    <td class="text-center" id="can5">15</td>
-                    <td class="text-center">
-                      <div class="form-group">
-                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalInformation('mod5', 'img5', 'ver5', 'sel5', 'pri5', 'can5')">
-                          <i class="material-icons">add_shopping_cart</i>
-                        </button>
-                        <button class="btn btn-info" style="font-size:20px" title="Apartar" data-toggle="modal" data-target="#ModalApartar">
-                          <i class="material-icons">book</i>
-                        </button>
-                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar"
-                          disabled>
-                          <i class="material-icons">compare_arrows</i>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
+                  <?php }
+                  ?>
                 </tbody>
               </table>
             </div>
@@ -594,8 +418,6 @@
   </div>
 
   <!-- TODO: Descargarlo en la carpeta componentes y enlazarlos -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
