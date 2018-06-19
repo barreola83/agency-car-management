@@ -31,10 +31,10 @@ if($conn->error){
             <td class="text-center"><?php echo $row["phone"]?></td>
             <td class="text-center">
                 <div class="form-group">
-                	<button class="btn btn-success" style="font-size:20px" title="Modificar" data-toggle="modal" data-target="#ModalModificar" onclick="setModalInformation('mod1', 'img1', 'ver1', 'sel1', 'pri1', 'can1')">
+                	<button class="btn btn-success" style="font-size:20px" title="Modificar" data-toggle="modal" data-target="#ModalModificar" onclick="loadEdit(this,<?php echo $row["id"] ?>)">
                         <i class="material-icons">update</i>
                     </button>
-                    <button class="btn btn-danger" style="font-size:20px" title="Eliminar" data-toggle="modal" data-target="#ModalEliminar">
+                    <button class="btn btn-danger" style="font-size:20px" title="Eliminar" data-toggle="modal" data-target="#ModalEliminar" onclick="loadDelete(this,<?php echo $row["id"] ?>)">
                         <i class="material-icons">delete_forever</i>
                     </button>
                 </div>
