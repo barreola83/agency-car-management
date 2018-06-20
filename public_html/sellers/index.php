@@ -161,7 +161,7 @@
             </thead>
             <tbody>
             <?php
-                $query="Select requests.id,automobiles.id_version,nodes.name,requests.status FROM requests INNER JOIN automobiles ON requests.id_automobile=automobiles.id INNER JOIN nodes ON requests.id_owner_node=nodes.id WHERE requests.id_requester_seller=4";//.$_POST["id_user"];
+                $query="Select requests.id,versions.version_name,nodes.name,requests.status,specs.model FROM requests INNER JOIN automobiles ON requests.id_automobile=automobiles.id INNER JOIN nodes ON requests.id_owner_node=nodes.id INNER JOIN versions ON versions.id=automobiles.id_version INNER JOIN specs ON specs.id=automobiles.id_specs WHERE requests.id_requester_seller=4";
                 $result=$conn->query($query);
                 if($conn->error){
                     die("Error en la consulta".$conn->error);
@@ -171,8 +171,8 @@
                     <tr>
                       <td class="text-center"><?php echo $row["id"]?></td>
                       <td class="text-center">img</td>
-                      <td class="text-center"><?php echo $row["id_version"]?></td>
-                      <td class="text-center">3</td>
+                      <td class="text-center"><?php echo $row["model"]?></td>
+                      <td class="text-center"><?php echo $row["version_name"]?></td>
 											<td class="text-center"><?php echo $row["name"]?></td>
 											<td class="text-center"><?php echo $row["status"]?></td>
                       <td class="text-center">
