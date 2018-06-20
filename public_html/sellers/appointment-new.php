@@ -15,6 +15,8 @@
   <!-- Archivos locales CSS -->
   <link href="../../css/admin4b.min.css" rel="stylesheet">
   <link href="../../css/admin4b-highlight.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+  <script src="js/main.js" type="text/javascript"></script>
   <title>Toyota Admin</title>
 </head>
 
@@ -40,7 +42,7 @@
 
           <div id="sidebar-nav" class="sidebar-nav" data-children=".sidebar-nav-group">
 
-            <a href="index.html" class="sidebar-nav-link">
+            <a href="index.php" class="sidebar-nav-link">
               <i class="icon-home"></i> Inicio
             </a>
 
@@ -49,8 +51,8 @@
                     <i class="icon-people"></i> Clientes y prospectos
                 </a>
                 <div id="prospects-clients" class="sidebar-nav-group collapse">
-                    <a href="prospect-new.html" class="sidebar-nav-link">Registrar</a>
-                    <a href="prospect-search.html" class="sidebar-nav-link">Consultar</a>
+                    <a href="prospect-new.php" class="sidebar-nav-link">Registrar</a>
+                    <a href="prospect-search.php" class="sidebar-nav-link">Consultar</a>
                 </div>
             </div>
 
@@ -59,7 +61,7 @@
                     <i class="icon-speedometer"></i> Vehículos
                 </a>
                 <div id="vehicles" class="sidebar-nav-group collapse">
-                    <a href="vehicles.html" class="sidebar-nav-link">Catálogo</a>
+                    <a href="vehicles.php" class="sidebar-nav-link">Catálogo</a>
                 </div>
             </div>
 
@@ -68,8 +70,7 @@
                     <i class="icon-calendar"></i> Agenda
                 </a>
                 <div id="agenda" class="sidebar-nav-group collapse">
-                    <a href="appointment-new.html" class="sidebar-nav-link">Registrar cita</a>
-                    <a href="appointment-update.html" class="sidebar-nav-link">Consultar cita</a>
+                    <a href="appointment-new.php" class="sidebar-nav-link">Registrar cita</a>
                 </div>
             </div>
 
@@ -118,15 +119,7 @@
                 <label>
                   Fecha
                 </label>
-                <input class="form-control" type="date"></input>
-              </div>
-            </div>
-            <div class="col col-md-4 col-lg-4">
-              <div class="form-group">
-                <label>
-                  Hora
-                </label>
-                <input class="form-control" type="time"></input>
+                <input class="form-control" type="datetime-local" id="agendaFecha"></input>
               </div>
             </div>
             <div class="col col-md-2 col-lg-2"></div>
@@ -139,7 +132,7 @@
                 <label>
                   Asunto
                 </label>
-                <input class="form-control" type="text"></input>
+                <input class="form-control" type="text" id="agendaAsunto"></input>
               </div>
             </div>
             <div class="col col-md-2 col-lg-2"></div>
@@ -152,7 +145,22 @@
                 <label>
                   Prospecto
                 </label>
-                <input class="form-control" type="text" placeholder="Nombre y Apellidos"></input>
+                <?php
+                require "funciones.php";
+                $conn=ConectarBD();
+                $result=$conn->query("Select id,name,first_last_name,second_last_name from prospects_clients");
+                ?>
+                <select id="agendaProspecto" class="form-control">
+                  <?php
+                  if($conn->error){
+                    die("Error en la consulta".$conn->error);
+                  }
+                  while($row=$result->fetch_assoc()){
+                  ?>
+                  <option><?php echo $row["id"]?>.- <?php echo $row["name"]?> <?php echo $row["first_last_name"]?> <?php echo $row["second_last_name"]?></option>
+                  <?php } $conn->close();
+                  ?>
+                </select>
               </div>
             </div>
             <div class="col col-md-2 col-lg-2"></div>
@@ -162,7 +170,7 @@
               <div class="col col-md-4 col-lg-4"></div>
               <div class="col col-md-4 col-lg-4">
                   <div class="form-group">
-                    <button class="btn btn-block btn-success">Agendar</button>
+                    <button class="btn btn-block btn-success" id="btnAgendar">Agendar</button>
                   </div>
               <div class="col col-md-4 col-lg-4"></div>
             </div>
@@ -175,8 +183,6 @@
   </div>
 
   <!-- TODO: Descargarlo en la carpeta componentes y enlazarlos -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
