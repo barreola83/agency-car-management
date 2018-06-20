@@ -161,7 +161,7 @@
             </thead>
             <tbody>
             <?php
-                $query="Select requests.id,versions.version_name,nodes.name,requests.status,specs.model FROM requests INNER JOIN automobiles ON requests.id_automobile=automobiles.id INNER JOIN nodes ON requests.id_owner_node=nodes.id INNER JOIN versions ON versions.id=automobiles.id_version INNER JOIN specs ON specs.id=automobiles.id_specs WHERE requests.id_requester_seller=4";
+                $query="Select automobiles.image_path,requests.id,versions.version_name,nodes.name,requests.status,specs.model FROM requests INNER JOIN automobiles ON requests.id_automobile=automobiles.id INNER JOIN nodes ON requests.id_owner_node=nodes.id INNER JOIN versions ON versions.id=automobiles.id_version INNER JOIN specs ON specs.id=automobiles.id_specs WHERE requests.id_requester_seller=4";
                 $result=$conn->query($query);
                 if($conn->error){
                     die("Error en la consulta".$conn->error);
@@ -170,7 +170,7 @@
                     ?>
                     <tr>
                       <td class="text-center"><?php echo $row["id"]?></td>
-                      <td class="text-center">img</td>
+                      <td class="text-center"> <img src="../../img/<?php echo $row["image_path"]?>" alt="img" height="100" width="100"></td>
                       <td class="text-center"><?php echo $row["model"]?></td>
                       <td class="text-center"><?php echo $row["version_name"]?></td>
 											<td class="text-center"><?php echo $row["name"]?></td>
