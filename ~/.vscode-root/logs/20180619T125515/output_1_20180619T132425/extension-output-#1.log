@@ -720,3 +720,809 @@ fatal: Not a git repository (or any of the parent directories): .git
 > git for-each-ref --format %(refname) %(objectname) --sort -committerdate
 > git remote --verbose
 > git add -A -- .
+> git commit --quiet --allow-empty-message --file - --all
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/general/signin.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin
+> git show :public_html/general/signin.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin
+> git show :public_html/general/signin.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/general/signin.js
+> git show :public_html/agency/main.js
+> git show :public_html/agency/index.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/general/signin.js
+> git show :public_html/general/signin.js
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/general/signin.js
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/index.php
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/index.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/index.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/index.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/index.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/database.php
+> git show :public_html/agency/index.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git show :public_html/general/signin.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/global/global.js
+> git show :public_html/general/signin.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/index.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/index.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/index.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git show :public_html/agency/index.php
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/index.php
+> git show :public_html/agency/index.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/index.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/index.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/index.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/index.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git show :public_html/general/signin.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/general/signin.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/general/signin.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/general/signin.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/general/signin.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/agency/main.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :public_html/general/signin.js
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse development
+> git rev-parse --symbolic-full-name development@{u}
+> git rev-list --left-right development...refs/remotes/origin/development
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -z --stdin

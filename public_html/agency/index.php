@@ -30,11 +30,7 @@
 
           <div class="sidebar-header">
             <img src="../../img/user-photo.png" class="user-photo">
-            <p class="username">
-              Dámaso Benicio
-              <!--
-              <small>Gerente de Agencias</small>
-              -->
+            <p class="username" id="username">
             </p>
           </div>
 
@@ -92,53 +88,31 @@
 
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item active" aria-current="page">¡Bienvenido, Dámaso Benicio!</li>
+              <li class="breadcrumb-item active" aria-current="page" id="welcomeMessage"></li>
             </ol>
           </nav>
 
           <!-- All applications content goes here -->
           <div class="container-fluid">
-
             <h2 class="text-center">Solicitudes salientes de vehículos</h2>
             <br>
 
-            <table class="table table-hover">
+            <table class="table table-striped table-hover">
               <thead>
                 <th>#</th>
                 <th>Vendedor</th>
-                <th>Agencia solicitante</th> <!-- Agencia solicitora -->
+                <th>Agencia</th> <!-- Agencia solicitora -->
                 <th>Modelo</th>
                 <th>Versión</th>
                 <th>Color</th>
                 <th>Acciones</th>
               </thead>
-              <tbody>
-                <?php
-                  /* Starts PHP code, try to connect to database. */
-                  require "functions.php";
-
-                  $conn = connectToDatabase();
-
-                  /* Execute query for first table */
-                  $results = $conn->query("SELECT * FROM requests");
-
-                  if ($results->num_rows > 0) {
-                    while ($row = $results->fetch_assoc()) {
-                      echo "<tr>";
-                      echo "<td>" . $row["id"] . "</td>";
-                      echo "</tr>";
-                    }
-                  } else {
-                    echo "<tr><td colspan='7'><strong>Sin solicitudes salientes</strong></td></tr>";
-                  }
-
-                ?>
+              <tbody id="tbodyOutgoingRequests">
               </tbody>
             </table>
           
             <br>
-            <h2 class="text-center">Solicitudes salientes de vehículos</h2>
-
+            <h2 class="text-center">Solicitudes entrantes de vehículos</h2>
           </div>
           <!-- End of application content -->
           
