@@ -129,7 +129,7 @@
                     </div>
                 </div>
 
-                <!-- Modal content goes here -->
+                <!-- Edit agency modal content goes here -->
                 <div class="modal fade" id="editAgencyModal" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -212,6 +212,9 @@
                                                 </label>
                                                 <select class="form-control" id="selState" required>
                                                 </select>
+                                                <div class="invalid-feedback">
+                                                    Debe seleccionar un estado.
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col ">
@@ -221,6 +224,9 @@
                                                 </label>
                                                 <select class="form-control" id="selTown" required>
                                                 </select>
+                                                <div class="invalid-feedback">
+                                                    Debe seleccionar una ciudad.
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -231,10 +237,13 @@
                                                     <span class="text-danger">*</span>Tipo:
                                                 </label>
                                                 <select class="form-control" id="selType" required>
-                                                    <option selected>Headquarters</option>
-                                                    <option>Agency</option>
-                                                    <option>Branch office</option>
+                                                    <option selected value="HEADQUARTERS">Headquarters</option>
+                                                    <option value="AGENCY">Agency</option>
+                                                    <option value="BRANCH_OFFICE">Branch office</option>
                                                 </select>
+                                                <div class="invalid-feedback">
+                                                    Debe seleccionar el tipo.
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col ">
