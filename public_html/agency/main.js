@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    //let user =  localStorage.getItem("user");
+    let user =  localStorage.getItem("user");
     console.log(JSON.parse(localStorage.getItem("user")));
 
     $("#username").text(localStorage.getItem("username"));
