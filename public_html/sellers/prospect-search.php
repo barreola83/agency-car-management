@@ -34,7 +34,7 @@
           <div class="sidebar-header">
             <img src="../../img/user-photo.png" class="user-photo">
             <p class="username">
-              Carlos Herrera
+              Damaso Benicio Rodriguez
               <small>Vendedor</small>
             </p>
           </div>
@@ -70,7 +70,6 @@
                 </a>
                 <div id="agenda" class="sidebar-nav-group collapse">
                     <a href="appointment-new.php" class="sidebar-nav-link">Registrar cita</a>
-                    <a href="appointment-update.php" class="sidebar-nav-link">Consultar cita</a>
                 </div>
             </div>
   
