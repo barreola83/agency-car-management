@@ -2,13 +2,11 @@ $(document).ready(function () {
 
     let customErrorMessage = "Ha ocurrido un error en el servidor, intente refrescar la página presionando F5.";
     let objectStock;
-    //let user =  localStorage.getItem("user");
-    console.log(JSON.parse(localStorage.getItem("user")));
 
-    $(".username").text(username);
-    $("p.username > small").text(role);
+    $(".username").text(localStorage.getItem("username"));
+    $("p.username > small").text(localStorage.getItem("role"));
     //$(".breadcrumb-item").text("¡Bienvenido, " + username + "!");
-    $("#welcomeMessage").text("¡Bienvenido, " + username + "!");
+    $("#welcomeMessage").text("¡Bienvenido, " + localStorage.getItem("username") + "!");
 
     $(function () {
         $.ajax({
@@ -88,6 +86,7 @@ $(document).ready(function () {
     });
 
     $("#logout").on("click", function () {
+        localStorage.clear();
         window.location.replace("../general/signin.html");
     });
 
@@ -161,12 +160,12 @@ $(document).ready(function () {
         //getAmountAvailable($("#model option:selected").text(), $("#version option:selected").attr("id"), $("#color option:selected").attr("id"));
     });
 
-    $("#selVersion").change(function(){
-        getAmountAvailable($("#model option:selected").text(), $("#selVersion option:selected").attr("id"), $("#color option:selected").attr("id"));        
+    $("#selVersion").change(function () {
+        getAmountAvailable($("#model option:selected").text(), $("#selVersion option:selected").attr("id"), $("#color option:selected").attr("id"));
     });
 
-    $("#color").change(function(){
-        getAmountAvailable($("#model option:selected").text(), $("#selVersion option:selected").attr("id"), $("#color option:selected").attr("id"));        
+    $("#color").change(function () {
+        getAmountAvailable($("#model option:selected").text(), $("#selVersion option:selected").attr("id"), $("#color option:selected").attr("id"));
     });
 
     $("#selState").change(function () {
@@ -552,5 +551,95 @@ $(document).ready(function () {
             }
         });
     }
+
+
+
+
+
+
+    //All canvas coding goes here
+
+    $(function () {
+        $("#startDate, #endDate").val(new Date().toISOString().substr(0, 10));
+        console.log($("#selReportType option:selected").attr("id"));
+        console.log($("#startDate").val() + " 00:00:00");
+        console.log($("#endDate").val() + " 00:00:00");
+        populateChart();
+        getReports();
+    });
+
+    function getReports() {
+        $.ajax({
+            data: {
+                "type": $("#selReportType option:selected").attr("id"),
+                "startDate": $("#startDate").val() + " 00:00:00",
+                "endDate": $("#endDate").val() + " 00:00:00"
+            },
+            url: "http://localhost/populate_chart.php",
+            dataType: 'json',
+            type: 'POST',
+            crossDomain: true,
+            success: function (response) {
+                console.log(response);
+                /*let html;
+                $.each(response, function (index, value) {
+                    
+                });*/
+            },
+            error: function (jqXhr, textStatus, errorMessage) {
+                console.log('textStatus: ' + textStatus);
+                console.log('Error: ' + errorMessage);
+            }
+        });
+    }
+
+    function populateChart() {
+        let chart = document.getElementById("reportChart").getContext('2d');
+        var myChart = new Chart(chart, {
+            type: 'bar',
+            data: {
+                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        })
+    }
+
+    $("#selReportType").change(function () {
+
+    });
+
+
+
+
+    //End of canvas coding
 
 });
