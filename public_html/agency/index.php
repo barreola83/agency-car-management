@@ -30,29 +30,23 @@
 
           <div class="sidebar-header">
             <img src="../../img/user-photo.png" class="user-photo">
-            <p class="username">
-              Dámaso
-              <small>Gerente de Agencias</small>
+            <p class="username" id="username">
             </p>
           </div>
 
           <div id="sidebar-nav" class="sidebar-nav" data-children=".sidebar-nav-group">
 
-            <a href="#" class="sidebar-nav-link">
+            <a href="index.php" class="sidebar-nav-link">
               <i class="icon-home"></i> Inicio
             </a>
 
             <div class="sidebar-nav-group">
-                <a href="#vehicles-stock" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                    <i class="icon-people"></i> Stock de vehículos
+                <a href="#stock" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
+                    <i class="icon-people"></i> Stock
                 </a>
-            </div>
-
-            <div class="sidebar-nav-group">
-                <a href="approve-request" class="sidebar-nav-link collapsed" data-toggle="collapse" data-parent="#sidebar-nav">
-                    <i class="icon-speedometer"></i> Solicitud de Vehículos 
-                  <a href="approve-request.html"></a>
-                </a>
+                <div id="stock" class="sidebar-nav-group collapse">
+                    <a href="stock.php" class="sidebar-nav-link">Consultar stock</a>
+                </div>
             </div>
 
             <div class="sidebar-nav-group">
@@ -60,21 +54,14 @@
                     <i class="icon-wallet"></i> Reportes
                 </a>
                 <div id="reports" class="sidebar-nav-group collapse">
-                    <a href="#" class="sidebar-nav-link">Generar Reporte</a>
-                    <a href="#" class="sidebar-nav-link">Consultar Reporte</a>
+                    <a href="reports.php" class="sidebar-nav-link">Generar Reporte</a>
                 </div>
             </div>
 
           </div>
           
           <div class="sidebar-footer">
-            <a href="https://github.com/marxjmoura/admin4b" data-toggle="tooltip" title="GitHub">
-              <i class="fa fa-github"></i>
-            </a>
-            <a href="./pages/sample-pages/settings.html" data-toggle="tooltip" title="Settings">
-              <i class="fa fa-cog"></i>
-            </a>
-            <a href="./pages/sample-pages/signin.html" data-toggle="tooltip" title="Logout">
+            <a href="../general/signin.html" data-toggle="tooltip" title="Logout">
               <i class="fa fa-power-off"></i>
             </a>
           </div>
@@ -96,49 +83,36 @@
                 <img src="../../img/logo_toyota.png">
               </a>
             </div>
-
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="badge badge-pill badge-primary">3</span>
-                  <i class="fa fa-bell-o"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <a href="#" class="dropdown-item">
-                    <small class="text-secondary">Lorem ipsum (today)</small><br>
-                    <div>Lorem ipsum dolor sit amet...</div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a href="#" class="dropdown-item">
-                    <small class="text-secondary">Lorem ipsum (yesterday)</small><br>
-                    <div>Lorem ipsum dolor sit amet...</div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a href="#" class="dropdown-item">
-                    <small class="text-secondary">Lorem ipsum (12/25/2017)</small><br>
-                    <div>Lorem ipsum dolor sit amet...</div>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a href="#" class="dropdown-item text-primary">
-                    See all notifications
-                  </a>
-                </div>
-              </li>
-            </ul>
           </nav>
           <!-- End of header -->
 
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item active" aria-current="page">¡Bienvenido Dámaso!</li>
+              <li class="breadcrumb-item active" aria-current="page" id="welcomeMessage"></li>
             </ol>
           </nav>
 
           <!-- All applications content goes here -->
           <div class="container-fluid">
+            <h2 class="text-center">Solicitudes salientes de vehículos</h2>
+            <br>
 
-            
-
+            <table class="table table-striped table-hover">
+              <thead>
+                <th>#</th>
+                <th>Vendedor</th>
+                <th>Agencia</th> <!-- Agencia solicitora -->
+                <th>Modelo</th>
+                <th>Versión</th>
+                <th>Color</th>
+                <th>Acciones</th>
+              </thead>
+              <tbody id="tbodyOutgoingRequests">
+              </tbody>
+            </table>
+          
+            <br>
+            <h2 class="text-center">Solicitudes entrantes de vehículos</h2>
           </div>
           <!-- End of application content -->
           
@@ -155,5 +129,6 @@
     <!-- Archivos de JavaScript locales -->
     <script src="../../js/admin4b.min.js"></script>
     <script src="../../js/admin4b.docs.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
