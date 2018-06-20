@@ -56,6 +56,7 @@ $(document).ready(function () {
                                 localStorage.setItem("role", response["0"].role);
                                 break;
                         }
+
                     } else {
                         showError();
                     }
