@@ -81,6 +81,16 @@ $(document).ready(function () {
                 window.location.reload();
         });
     });
+
+    $("#btnModalSolicitar").click(function(){
+        $.post("solicitar.php",{
+            Id:$("#ModalSolicitarId").val(),Modelo:$("#ModalSolicitarModelo").html()
+        },
+            function(data,status){
+                if (data != "OK") { alert(data); return; }
+                window.location.reload();
+        });
+    });
 });
 
 function CancelarSolicitud(Obj,IdE) {
@@ -119,19 +129,22 @@ function loadDelete(Obj,IdE)
     $("#ModalEliminarTel").val(Obj.parentNode.parentNode.parentNode.childNodes[13].innerText);
 }
 
-function setModalVender(model,version)
+function setModalVender(model,version,color)
 {
     $.post("buscarInfoVehiculo.php",{Modelo:model,Version:version},function(data,status){
         $("#ModalVenderModelo").html(model);
         $("#ModalVenderVersion").val(version);
         $("#ModalVenderId").val(data);
+        $("#ModalVenderColor").val(color.slice(-10,-4));
     });
 }
 
-function setModalSolicitar(Obj,IdE)
+function setModalSolicitar(model,version,color)
 {
     $.post("buscarInfoVehiculo.php",{Modelo:model,Version:version},function(data,status){
+        $("#ModalSolicitarModelo").html(model);
         $("#ModalSolicitarVersion").val(version);
-        $("#ModalSolicitarColor").val($_GET["color"]);
+        $("#ModalSolicitarId").val(data);
+        $("#ModalSolicitarColor").val(color.slice(-10,-4));
     });
 }

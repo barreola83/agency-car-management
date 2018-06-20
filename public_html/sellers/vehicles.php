@@ -36,7 +36,7 @@
         <div class="sidebar-header">
           <img src="../../img/user-photo.png" class="user-photo">
           <p class="username">
-            Carlos Herrera
+            Damaso Benicio Rodriguez
             <small>Vendedor</small>
           </p>
         </div>
@@ -141,6 +141,7 @@
                     <th scope="col" class="text-center">Imagen</th>
                     <th scope="col" class="text-center">Modelo</th>
                     <th scope="col" class="text-center">Versión</th>
+                    <th scope="col" class="text-center">Cantidad</th>
                     <th scope="col" class="text-center">Acciones</th>
                   </tr>
                 </thead>
@@ -158,15 +159,16 @@
                     <td class="text-center"><img id="img1" src="../../<?php echo $row["image_path"]?>" class="img-fluid" width="100" height="100"></td>
                    	<td class="text-center"><?php echo $row["model"]?></td>
                     <td class="text-center"><?php echo $row["version_name"]?></td>
+                    <td class="text-center"><?php echo ObtenerCantidad($row["model"],$row["id_version"],"8");?></td>
                     <td class="text-center">
                       <div class="form-group">
-                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalVender('<?php echo $row["model"]?>','<?php echo $row["version_name"]?>')">
+                        <button class="btn btn-success" style="font-size:20px" title="Vender" data-toggle="modal" data-target="#ModalVender" onclick="setModalVender('<?php echo $row["model"]?>','<?php echo $row["version_name"]?>','<?php echo $row["image_path"]?>')">
                           <i class="material-icons">add_shopping_cart</i>
                         </button>
                         <button class="btn btn-info" style="font-size:20px" title="Apartar" data-toggle="modal" data-target="#ModalApartar" onclick="setModalApartar('<?php echo $row["model"]?>','<?php echo $row["version_name"]?>')" disabled>
                           <i class="material-icons">book</i>
                         </button>
-                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar" onclick="setModalSolicitar('<?php echo $row["model"]?>','<?php echo $row["version_name"]?>')">
+                        <button class="btn btn-danger" style="font-size:20px" title="Solicitar" data-toggle="modal" data-target="#ModalSolicitar" onclick="setModalSolicitar('<?php echo $row["model"]?>','<?php echo $row["version_name"]?>','<?php echo $row["image_path"]?>')">
                           <i class="material-icons">compare_arrows</i>
                         </button>
                       </div>
@@ -204,12 +206,7 @@
                   <div class="col">
                     <div class="form-group">
                       <label>Color:</label>
-                      <select class="form-control" id="ModalVenderColor">
-                        <option value="Negro">Negro</option>
-                        <option value="Azul">Azul</option>
-                        <option value="Blanco">Blanco</option>
-                        <option value="Rojo">Rojo</option>
-                      </select>
+                      <input class="form-control" id="ModalVenderColor" readonly>
                     </div>
                   </div>
 
@@ -323,10 +320,12 @@
                   <h3 id="ModalSolicitarModel"></h3>
                   <img id="ModalSolicitarImage" class="img-fluid" style="float: left;">
                   <h5>Información</h5>
+                  <h3 id="ModalSolicitarModelo"></h3>
                   <hr>
                   <div class="col">
                     <div class="form-group">
                       <label>Versión:</label>
+                      <input type="hidden" id="ModalVenderId">
                       <input class="form-control" id="ModalSolicitarVersion" readonly>
                     </div>
                   </div>
@@ -338,13 +337,6 @@
                     </div>
                   </div>
 
-                  <div class="col">
-                    <div class="form-group">
-                      <label>Precio:</label>
-                      <input class="form-control" id="ModalSolicitarPrice" readonly>
-                    </div>
-                  </div>
-
                   <h5>Agencias</h5>
                   <hr>
                   <div class="col">
@@ -352,37 +344,8 @@
                       <label>*Agencias:</label>
                       <select class="form-control" id="ModalSolicitarAgencies" onclick="getAgencyInformation('ModalSolicitarAgencies')">
                         <option value="age0" selected>--</option>
-                        <option value="age1">Oz Toyota Colima</option>
                         <option value="age2">Dalton Toyota López Mateos Guadalajara</option>
                       </select>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="form-group">
-                      <label>Domicilio:</label>
-                      <input type="text" class="form-control" id="ModalSolicitarAddress" readonly>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="form-group">
-                      <label>Ciudad:</label>
-                      <input type="text" class="form-control" id="ModalSolicitarTown" readonly>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="form-group">
-                      <label>Estado:</label>
-                      <input type="text" class="form-control" id="ModalSolicitarState" readonly>
-                    </div>
-                  </div>
-
-                  <div class="col">
-                    <div class="form-group">
-                      <label>Teléfono:</label>
-                      <input type="text" class="form-control" id="ModalSolicitarPhone" readonly>
                     </div>
                   </div>
 
@@ -446,46 +409,6 @@
         $("#btnModalSolicitar").attr("disabled", true);
       }
     }
-
-    function setModalInformation(model, image, version, select, price, quantity) {
-      $("#ModalVenderModel").text($("#" + model).text());
-      $("#ModalVenderImage").attr("src", $("#" + image).attr("src"));
-      $("#ModalVenderVersion").val($("#" + version).text());
-      $("#ModalVenderColor").val($("#" + select + ' option:selected').text());
-      $("#ModalVenderPrice").val($("#" + price).text());
-      lastQuantity = $("#" + quantity);
-    }
-
-    function setModalInformationForRequests(model, image, version, select, price, quantity) {
-      $("#ModalSolicitarModel").text($("#" + model).text());
-      $("#ModalSolicitarImage").attr("src", $("#" + image).attr("src"));
-      $("#ModalSolicitarVersion").val($("#" + version).text());
-      $("#ModalSolicitarColor").val($("#" + select + ' option:selected').text());
-      $("#ModalSolicitarPrice").val($("#" + price).text());
-    }
-
-    $("#ModalVenderRFC").on('keydown', function (e) {
-      if (e.which == 13) {
-        if ($("#ModalVenderRFC").val() == "FEFJ760519U91") {
-          $("#ModalVenderName").val("Jesús Carlos Fernández Flores");
-          $("#ModalVenderEmail").val("jfern_76@gmail.com");
-          $("#ModalVenderPhone").val("3141220970");
-          foundFlag = true;
-        }
-      }
-    });
-
-    $("#btnModalVender").click(function () {
-      if (foundFlag == true) {
-        lastQuantity.text(parseInt(lastQuantity.text()) - 1);
-        $("#container").prepend("<div class='alert alert-success alert-dismissible fade show' role='alert'><strong>Éxito:</strong> La venta se registró exitosamente.<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
-        foundFlag = false;
-      }
-    });
-
-    $("#btnModalSolicitar").click(function () {
-      $("#container").prepend("<div class='alert alert-success alert-dismissible fade show' role='alert'><strong>Éxito:</strong> La solicitud fue enviada y se encuentra en espera de aprobación.<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>");
-    });
   </script>
 </body>
 </html>

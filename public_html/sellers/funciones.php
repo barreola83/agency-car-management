@@ -13,4 +13,12 @@
         $data = str_replace("'", "\'", $data);
         return $data;
     }
+
+    function ObtenerCantidad($modelo,$version,$color)
+    {
+        $conn=ConectarBD();
+        $result=$conn->query("CALL get_amount_available('".$modelo."',".$version.",".$color.")") or die($conn->error);
+        $row=$result->fetch_assoc();
+        return $row["amount_available"];
+    }
 ?>
