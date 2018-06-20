@@ -61,7 +61,7 @@
           </div>
           
           <div class="sidebar-footer">
-            <a href="../general/signin.html" data-toggle="tooltip" title="Logout">
+            <a href="../general/signin.html" data-toggle="tooltip" title="Logout" id="logout">
               <i class="fa fa-power-off"></i>
             </a>
           </div>
@@ -105,6 +105,7 @@
                 <th>Modelo</th>
                 <th>Versión</th>
                 <th>Color</th>
+                <th>Estatus</th>
                 <th>Acciones</th>
               </thead>
               <tbody id="tbodyOutgoingRequests">
@@ -121,7 +122,7 @@
     </div>
 
     <!-- TODO: Descargarlo en la carpeta componentes y enlazarlos -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
