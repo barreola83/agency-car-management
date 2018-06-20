@@ -18,6 +18,24 @@ $(document).ready(function () {
 		});
     });
 
+    $("#btnAgendar").click(function(){
+        var pos = $("#agendaProspecto").val().indexOf(".");
+		$.post("agendar.php",
+		{
+            Fecha:$("#agendaFecha").val().replace("T"," "),
+			Asunto:$("#agendaAsunto").val(),
+            Prospecto:$("#agendaProspecto").val().slice(0,pos)
+        },
+			function(data,status){
+				if(data!="OK"){
+                    alert(data);
+                    return;
+                }
+                alert("Agregada correctamente");
+                window.location("index.php");
+		});
+    });
+
     $("#btnModalModificar").click(function(){
 		$.post("modificarProspecto.php",
 		{

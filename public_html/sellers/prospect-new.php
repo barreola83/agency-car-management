@@ -71,7 +71,6 @@
               </a>
               <div id="agenda" class="sidebar-nav-group collapse">
                   <a href="appointment-new.php" class="sidebar-nav-link">Registrar cita</a>
-                  <a href="appointment-update.php" class="sidebar-nav-link">Consultar cita</a>
               </div>
           </div>
 

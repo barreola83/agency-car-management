@@ -38,7 +38,7 @@
 
           <div id="sidebar-nav" class="sidebar-nav" data-children=".sidebar-nav-group">
 
-            <a href="#" class="sidebar-nav-link">
+            <a href="index.php" class="sidebar-nav-link">
               <i class="icon-home"></i> Inicio
             </a>
 
@@ -47,10 +47,8 @@
                     <i class="icon-people"></i> Clientes y prospectos
                 </a>
                 <div id="prospects-clients" class="sidebar-nav-group collapse">
-                    <a href="#" class="sidebar-nav-link">Registrar</a>
-                    <a href="#" class="sidebar-nav-link">Consultar</a>
-                    <a href="#" class="sidebar-nav-link">Actualizar</a>
-
+                  <a href="prospect-new.php" class="sidebar-nav-link">Registrar</a>
+                  <a href="prospect-search.php" class="sidebar-nav-link">Consultar</a>
                 </div>
             </div>
 
@@ -59,7 +57,7 @@
                     <i class="icon-speedometer"></i> Vehículos
                 </a>
                 <div id="vehicles" class="sidebar-nav-group collapse">
-                    <a href="#" class="sidebar-nav-link">Catálogo</a>
+                    <a href="vehicles.php" class="sidebar-nav-link">Catálogo</a>
                 </div>
             </div>
 
@@ -69,9 +67,6 @@
                 </a>
                 <div id="agenda" class="sidebar-nav-group collapse">
                     <a href="#" class="sidebar-nav-link">Registrar cita</a>
-                    <a href="#" class="sidebar-nav-link">Consultar cita</a>
-                    <a href="#" class="sidebar-nav-link">Actualizar cita</a>
-                    <a href="#" class="sidebar-nav-link">Eliminar cita</a>
                 </div>
             </div>
 
