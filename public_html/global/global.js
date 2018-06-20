@@ -156,10 +156,8 @@ $(document).ready(function () {
     $("#model").change(function () {
         console.log("Se envió: " + $("#model option:selected").text());
         retrieveVersion($("#model option:selected").text());
-        retrieveColors($("#model option:selected").val());
-        console.log($("#version option:selected").val());
-        console.log($("#color option:selected").val());
-        getAmountAvailable($("#model option:selected").text(), $("#version option:selected").attr("id"), $("#color option:selected").attr("id"));
+        retrieveColors($("#model option:selected").text());
+        //getAmountAvailable($("#model option:selected").text(), $("#version option:selected").attr("id"), $("#color option:selected").attr("id"));
 
     });
 
@@ -222,16 +220,18 @@ $(document).ready(function () {
             type: "POST",
             crossDomain: true,
             success: function (response) {
-                //console.log("VERSIONS ", response);
+                console.log("VERSIONS ", response);
                 if (response == null || response == 'undefined') {
                     $("#addCarModalBody").html(errorMessage);
                     console.log("response null or undefined in version select.");
                 } else {
                     let html;
                     $.each(response, function (index, value) {
+                        console.log(value);
                         html += "<option id=" + value.id + ">" + value.version + "</option>";
+                        console.log("<option id=" + value.id + ">" + value.version + "</option>");
                     });
-                    $("#version").html(html);
+                    $("#selVersion").html(html);
                 }
             },
             error: function (jqXhr, textStatus, errorMessage) {

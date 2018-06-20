@@ -30,7 +30,15 @@ $(document).ready(function () {
                 success: function (response) {
                     //console.log(response);
                     if (response != "undefined" || response != "") {
-                        localStorage.setItem("user", response);
+                        let user = {
+                            "id": response["0"].id,
+                            "id_node": response["0"].id_node,
+                            "name": response["0"].name,
+                            "first_last_name": response["0"].first_last_name,
+                            "second_last_name": response["0"].second_last_name,
+                            "role_name": response["0"].role_name
+                        };                        
+                        localStorage.setItem("user", JSON.stringify(user));
                         switch (response["0"].role) {
                             case "Agency Manager":
                                 window.location.replace("../agency/index.php");
@@ -48,6 +56,7 @@ $(document).ready(function () {
                                 localStorage.setItem("role", response["0"].role);
                                 break;
                         }
+
                     } else {
                         showError();
                     }
